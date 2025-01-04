@@ -1,0 +1,149 @@
+<!-- Page Header -->
+<div class="bg-light py-5">
+  <div class="container">
+    <h1 class="display-4">İletişim</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Ana Sayfa", root_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">İletişim</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Contact Info -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h3 class="mb-4">Bize Ulaşın</h3>
+            <%= form_with(url: contact_path, local: true, class: "contact-form") do |f| %>
+              <div class="mb-3">
+                <%= f.label :name, "Adınız Soyadınız", class: "form-label" %>
+                <%= f.text_field :name, class: "form-control", required: true %>
+              </div>
+              
+              <div class="mb-3">
+                <%= f.label :email, "E-posta Adresiniz", class: "form-label" %>
+                <%= f.email_field :email, class: "form-control", required: true %>
+              </div>
+              
+              <div class="mb-3">
+                <%= f.label :phone, "Telefon Numaranız", class: "form-label" %>
+                <%= f.telephone_field :phone, class: "form-control", required: true %>
+              </div>
+              
+              <div class="mb-3">
+                <%= f.label :subject, "Konu", class: "form-label" %>
+                <%= f.text_field :subject, class: "form-control", required: true %>
+              </div>
+              
+              <div class="mb-3">
+                <%= f.label :message, "Mesajınız", class: "form-label" %>
+                <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
+              </div>
+              
+              <%= f.submit "Gönder", class: "btn btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="col-lg-6">
+        <div class="row g-4">
+          <!-- Gaziantep Plaza -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h4 class="card-title">Gaziantep Plaza</h4>
+                <p class="card-text">
+                  <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                  İbn-i Sina Mah. Havaalanı Yolu Bulvarı No:214 Şahinbey/Gaziantep
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-phone text-danger me-2"></i>
+                  <a href="tel:03422352864" class="text-dark text-decoration-none">0342 235 2864</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Nizip Şube -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h4 class="card-title">Nizip Şube</h4>
+                <p class="card-text">
+                  <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                  İstasyon Mah. Mehmet Ülkü Bilgi Bulvarı No:33 Nizip/Gaziantep
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-phone text-danger me-2"></i>
+                  <a href="tel:03425130193" class="text-dark text-decoration-none">0342 513 0193</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Çalışma Saatleri -->
+          <div class="col-12">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h4 class="card-title">Çalışma Saatleri</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2">
+                    <i class="fas fa-clock text-danger me-2"></i>
+                    <strong>Hafta içi:</strong> 08:00 - 18:00
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-clock text-danger me-2"></i>
+                    <strong>Cumartesi:</strong> 08:00 - 14:00
+                  </li>
+                  <li>
+                    <i class="fas fa-clock text-danger me-2"></i>
+                    <strong>Pazar:</strong> Kapalı
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="text-center mb-4">Konumumuz</h3>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.5276811863897!2d37.3758833!3d37.0591667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e6b3c2c2c2c2%3A0x1531e6b3c2c2c2c2!2sY%C4%B1lmazlar%20Massey%20Ferguson!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <h5 class="text-center mt-3">Gaziantep Plaza</h5>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.5276811863897!2d37.3758833!3d37.0591667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e6b3c2c2c2c2%3A0x1531e6b3c2c2c2c2!2sY%C4%B1lmazlar%20Massey%20Ferguson!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <h5 class="text-center mt-3">Nizip Şube</h5>
+      </div>
+    </div>
+  </div>
+</section> 
