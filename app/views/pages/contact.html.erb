@@ -20,33 +20,40 @@
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4">
             <h3 class="mb-4">Bize Ulaşın</h3>
-            <%= form_with(url: contact_path, local: true, class: "contact-form") do |f| %>
+            <%= form_for Contact.new do |f| %>
               <div class="mb-3">
                 <%= f.label :name, "Adınız Soyadınız", class: "form-label" %>
                 <%= f.text_field :name, class: "form-control", required: true %>
               </div>
-              
+
               <div class="mb-3">
                 <%= f.label :email, "E-posta Adresiniz", class: "form-label" %>
                 <%= f.email_field :email, class: "form-control", required: true %>
               </div>
-              
+
               <div class="mb-3">
                 <%= f.label :phone, "Telefon Numaranız", class: "form-label" %>
                 <%= f.telephone_field :phone, class: "form-control", required: true %>
               </div>
-              
-              <div class="mb-3">
-                <%= f.label :subject, "Konu", class: "form-label" %>
-                <%= f.text_field :subject, class: "form-control", required: true %>
-              </div>
-              
+
               <div class="mb-3">
                 <%= f.label :message, "Mesajınız", class: "form-label" %>
                 <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
               </div>
-              
+
               <%= f.submit "Gönder", class: "btn btn-danger" %>
+            <% end %>
+
+            <% if flash[:notice] %>
+              <div class="alert alert-success mt-3">
+                <%= flash[:notice] %>
+              </div>
+            <% end %>
+
+            <% if flash[:alert] %>
+              <div class="alert alert-danger mt-3">
+                <%= flash[:alert] %>
+              </div>
             <% end %>
           </div>
         </div>

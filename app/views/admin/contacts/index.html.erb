@@ -1,0 +1,35 @@
+<h1 class="text-2xl font-bold mb-6">İletişim Mesajları</h1>
+
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead>
+      <tr>
+        <th class="px-6 py-3 border-b border-gray-300 bg-gray-100">İsim</th>
+        <th class="px-6 py-3 border-b border-gray-300 bg-gray-100">E-posta</th>
+        <th class="px-6 py-3 border-b border-gray-300 bg-gray-100">Telefon</th>
+        <th class="px-6 py-3 border-b border-gray-300 bg-gray-100">Durum</th>
+        <th class="px-6 py-3 border-b border-gray-300 bg-gray-100">Tarih</th>
+        <th class="px-6 py-3 border-b border-gray-300 bg-gray-100">İşlemler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 border-b border-gray-300"><%= contact.name %></td>
+          <td class="px-6 py-4 border-b border-gray-300"><%= contact.email %></td>
+          <td class="px-6 py-4 border-b border-gray-300"><%= contact.phone %></td>
+          <td class="px-6 py-4 border-b border-gray-300">
+            <span class="<%= contact.new_message? ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' %> px-2 py-1 rounded-full text-sm">
+              <%= contact.status %>
+            </span>
+          </td>
+          <td class="px-6 py-4 border-b border-gray-300"><%= contact.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+          <td class="px-6 py-4 border-b border-gray-300">
+            <%= link_to 'Görüntüle', admin_contact_path(contact), class: 'text-blue-600 hover:text-blue-800' %>
+            <%= button_to 'Sil', admin_contact_path(contact), method: :delete, class: 'text-red-600 hover:text-red-800 ml-2', data: { confirm: 'Emin misiniz?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div> 

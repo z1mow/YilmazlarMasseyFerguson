@@ -1,0 +1,53 @@
+<div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Mesaj Detayı</h1>
+    <%= link_to 'Geri Dön', admin_contacts_path, class: 'text-blue-600 hover:text-blue-800' %>
+  </div>
+
+  <div class="space-y-4">
+    <div class="border-b pb-4">
+      <h2 class="text-gray-600">Gönderen Bilgileri</h2>
+      <div class="mt-2 grid grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm text-gray-600">İsim:</p>
+          <p class="font-medium"><%= @contact.name %></p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-600">E-posta:</p>
+          <p class="font-medium"><%= @contact.email %></p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-600">Telefon:</p>
+          <p class="font-medium"><%= @contact.phone %></p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-600">Tarih:</p>
+          <p class="font-medium"><%= @contact.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-b pb-4">
+      <h2 class="text-gray-600 mb-2">Mesaj</h2>
+      <p class="whitespace-pre-wrap"><%= @contact.message %></p>
+    </div>
+
+    <div class="border-b pb-4">
+      <h2 class="text-gray-600 mb-2">Durum</h2>
+      <%= form_for [:admin, @contact] do |f| %>
+        <div class="flex items-center space-x-4">
+          <%= f.select :status, Contact.statuses.keys.map { |s| [s.humanize, s] },
+                      {}, class: 'rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50' %>
+          <%= f.submit 'Güncelle', class: 'px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="flex justify-end">
+      <%= button_to 'Mesajı Sil', admin_contact_path(@contact), 
+                    method: :delete, 
+                    class: 'px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2',
+                    data: { confirm: 'Bu mesajı silmek istediğinizden emin misiniz?' } %>
+    </div>
+  </div>
+</div> 
