@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  # Admin authentication routes
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
   root 'pages#home'
   
   get 'hakkimizda', to: 'pages#about', as: :about
@@ -10,7 +15,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:create]
   
   namespace :admin do
-    get '/', to: 'contacts#index'
+    root 'contacts#index'
     resources :contacts, only: [:index, :show, :update, :destroy]
   end
 end

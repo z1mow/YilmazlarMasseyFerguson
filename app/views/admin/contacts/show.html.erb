@@ -1,53 +1,88 @@
-<div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
-  <div class="flex justify-between items-center mb-6">
-    <h1 class="text-2xl font-bold">Mesaj Detayı</h1>
-    <%= link_to 'Geri Dön', admin_contacts_path, class: 'text-blue-600 hover:text-blue-800' %>
-  </div>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="card-title">Mesaj Detayı</h2>
+            <%= link_to 'Geri Dön', admin_contacts_path, class: 'btn btn-secondary' %>
+          </div>
 
-  <div class="space-y-4">
-    <div class="border-b pb-4">
-      <h2 class="text-gray-600">Gönderen Bilgileri</h2>
-      <div class="mt-2 grid grid-cols-2 gap-4">
-        <div>
-          <p class="text-sm text-gray-600">İsim:</p>
-          <p class="font-medium"><%= @contact.name %></p>
-        </div>
-        <div>
-          <p class="text-sm text-gray-600">E-posta:</p>
-          <p class="font-medium"><%= @contact.email %></p>
-        </div>
-        <div>
-          <p class="text-sm text-gray-600">Telefon:</p>
-          <p class="font-medium"><%= @contact.phone %></p>
-        </div>
-        <div>
-          <p class="text-sm text-gray-600">Tarih:</p>
-          <p class="font-medium"><%= @contact.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+          <div class="card mb-4">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Gönderen Bilgileri</h3>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <strong>İsim:</strong>
+                <p class="mb-2"><%= @contact.name %></p>
+              </div>
+
+              <div class="mb-3">
+                <strong>E-posta:</strong>
+                <p class="mb-2"><%= @contact.email %></p>
+              </div>
+
+              <div class="mb-3">
+                <strong>Telefon:</strong>
+                <p class="mb-2"><%= @contact.phone %></p>
+              </div>
+
+              <div class="mb-3">
+                <strong>Tarih:</strong>
+                <p class="mb-2"><%= @contact.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Mesaj</h3>
+            </div>
+            <div class="card-body">
+              <p><%= @contact.message %></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Durum</h3>
+            </div>
+            <div class="card-body">
+              <%= form_with(model: [:admin, @contact], local: true, class: 'd-flex gap-2 mb-3') do |f| %>
+                <%= f.select :status, Contact.statuses.keys, {}, class: 'form-select' %>
+                <%= f.submit 'Güncelle', class: 'btn btn-primary' %>
+              <% end %>
+              
+              <div class="border-top pt-3">
+                <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                  Mesajı Sil
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="border-b pb-4">
-      <h2 class="text-gray-600 mb-2">Mesaj</h2>
-      <p class="whitespace-pre-wrap"><%= @contact.message %></p>
-    </div>
-
-    <div class="border-b pb-4">
-      <h2 class="text-gray-600 mb-2">Durum</h2>
-      <%= form_for [:admin, @contact] do |f| %>
-        <div class="flex items-center space-x-4">
-          <%= f.select :status, Contact.statuses.keys.map { |s| [s.humanize, s] },
-                      {}, class: 'rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50' %>
-          <%= f.submit 'Güncelle', class: 'px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2' %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="flex justify-end">
-      <%= button_to 'Mesajı Sil', admin_contact_path(@contact), 
-                    method: :delete, 
-                    class: 'px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2',
-                    data: { confirm: 'Bu mesajı silmek istediğinizden emin misiniz?' } %>
+<!-- Silme Onay Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Silme Onayı</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+        <p>Bu mesajı silmek istediğinizden emin misiniz?</p>
+        <p class="text-danger"><small>Bu işlem geri alınamaz!</small></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+        <%= button_to 'Sil', admin_contact_path(@contact), method: :delete, class: 'btn btn-danger' %>
+      </div>
     </div>
   </div>
 </div> 
