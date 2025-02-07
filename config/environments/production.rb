@@ -20,14 +20,14 @@ Rails.application.configure do
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
-  # Enable serving static files from `public/`
-  config.public_file_server.enabled = true
+  # Disable serving static files from `public/`
+  config.public_file_server.enabled = false
 
-  # Allow assets to be compiled on the fly if needed
-  config.assets.compile = true
-
-  # Compress CSS using a preprocessor
+  # Compress CSS using a preprocessor.
   config.assets.css_compressor = :sass
+
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
@@ -74,9 +74,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "yilmazlar_mf_production"
 
-  # Disable caching for Action Mailer templates even if Action Controller
-  # caching is enabled.
-  config.action_mailer.perform_caching = false
+  # Enable caching for Action Mailer templates
+  config.action_mailer.perform_caching = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -89,10 +88,10 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Disable Active Record
-  config.active_record.migration_error = false
-  config.active_record.dump_schema_after_migration = false
-  config.active_record.database_selector = false
+  # Enable Active Record
+  config.active_record.migration_error = :page_load
+  config.active_record.dump_schema_after_migration = true
+  config.active_record.database_selector = { delay: 2.seconds }
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
