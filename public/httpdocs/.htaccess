@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /
+DirectoryIndex index.html
+Options +FollowSymLinks
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L]
+
+<Directory "/httpdocs/public">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    Require all granted
+</Directory>

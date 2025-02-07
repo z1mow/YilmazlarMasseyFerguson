@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <title><%= content_for(:title) || "Yılmazlar Massey Ferguson" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="1969'dan beri Massey Ferguson'un Türkiye'deki güvenilir yetkili satıcısı">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <style>
+      :root {
+        --primary-color: #E31E24;
+        --secondary-color: #333333;
+      }
+      
+      body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      }
+
+      .top-bar {
+        background-color: #f8f9fa;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .navbar {
+        padding: 15px 0;
+        background-color: white !important;
+        border-bottom: 1px solid #eee;
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        padding: 0;
+      }
+
+      .navbar-brand img {
+        height: 60px;
+        width: auto;
+      }
+
+      .navbar-nav {
+        margin-left: auto;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: var(--secondary-color) !important;
+        font-weight: 500;
+        padding: 0.5rem 1.5rem !important;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      .nav-item {
+        margin: 0 5px;
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          background: white;
+          padding: 1rem;
+          margin-top: 1rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+          margin: 5px 0;
+        }
+        
+        .nav-link {
+          padding: 0.5rem 1rem !important;
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: #c41920;
+        border-color: #c41920;
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      footer {
+        background-color: #1a1a1a !important;
+      }
+
+      .footer-logo img {
+        height: 120px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .social-links a {
+        color: white;
+        margin-right: 15px;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .social-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .contact-info i {
+        color: var(--primary-color);
+      }
+
+      /* Hero Section Styles */
+      .hero-section {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.65));
+        z-index: 2;
+      }
+
+      .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 10;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .hero-section p {
+        font-size: 1.25rem;
+        color: #666;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          height: 300px;
+        }
+        
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+        
+        .hero-section p {
+          font-size: 1rem;
+        }
+      }
+
+      /* Top bar sosyal medya ikonları için özel stil */
+      .top-bar .social-links a {
+        color: var(--secondary-color);
+        opacity: 0.8;
+      }
+
+      .top-bar .social-links a:hover {
+        color: var(--primary-color);
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar d-none d-lg-block">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <small>
+              <i class="fas fa-phone me-2 text-danger"></i>
+              <a href="tel:03422352864" class="text-dark text-decoration-none">0342 235 2864</a>
+            </small>
+          </div>
+          <div class="col-md-6 text-end">
+            <div class="social-links">
+              <a href="https://www.facebook.com/yilmazlarMasseyferguson" target="_blank" class="text-secondary">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/yilmazlarmasseyferguson/" target="_blank" class="text-secondary">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@ylmazlarmasseyfergusonbayi2716" target="_blank" class="text-secondary">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <%= image_tag "ymf_logo.png", alt: "YMF Logo", style: "height: 80px; margin-right: 40px;" %>
+          <%= image_tag "massey_ferguson_logo.png", alt: "Massey Ferguson Logo", style: "height: 70px;" %>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <%= link_to "Ana Sayfa", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Hakkımızda", about_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Ürünler", products_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Servis", service_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Yedek Parça", spare_parts_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "İletişim", contact_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <%= yield %>
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="footer-logo mb-4">
+              <%= image_tag "ymf_logo.png", alt: "YMF Logo", class: "mb-3" %>
+            </div>
+            <p class="text-light opacity-75">1969'dan beri Massey Ferguson'un Türkiye'deki güvenilir yetkili satıcısı olarak hizmetinizdeyiz.</p>
+            <div class="social-links mt-4">
+              <a href="https://www.facebook.com/yilmazlarMasseyferguson" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/yilmazlarmasseyferguson/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@ylmazlarmasseyfergusonbayi2716" target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="text-light mb-4">İletişim Bilgileri</h5>
+            <div class="contact-info">
+              <p class="text-light opacity-75 mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i>
+                İbn-i Sina Mah. Havaalanı Yolu Bulvarı No:214 Şahinbey/Gaziantep
+              </p>
+              <p class="text-light opacity-75 mb-2">
+                <i class="fas fa-phone me-2"></i>
+                <a href="tel:03422352864" class="text-light text-decoration-none">0342 235 2864</a>
+              </p>
+              <p class="text-light opacity-75 mb-2">
+                <i class="fas fa-clock me-2"></i>
+                Hafta içi: 08:00 - 18:00
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="text-light mb-4">Hızlı Erişim</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><%= link_to "Ana Sayfa", root_path, class: "text-light text-decoration-none opacity-75" %></li>
+              <li class="mb-2"><%= link_to "Hakkımızda", about_path, class: "text-light text-decoration-none opacity-75" %></li>
+              <li class="mb-2"><%= link_to "Ürünler", products_path, class: "text-light text-decoration-none opacity-75" %></li>
+              <li class="mb-2"><%= link_to "Servis", service_path, class: "text-light text-decoration-none opacity-75" %></li>
+              <li class="mb-2"><%= link_to "Yedek Parça", spare_parts_path, class: "text-light text-decoration-none opacity-75" %></li>
+              <li><%= link_to "İletişim", contact_path, class: "text-light text-decoration-none opacity-75" %></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="border-secondary my-4">
+        <div class="row">
+          <div class="col text-center">
+            <p class="text-light opacity-75 mb-0">&copy; <%= Time.current.year %> Yılmazlar Massey Ferguson. Tüm hakları saklıdır.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

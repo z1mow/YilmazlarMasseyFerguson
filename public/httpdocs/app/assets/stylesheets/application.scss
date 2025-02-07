@@ -1,0 +1,34 @@
+// Import Bootstrap
+@import 'bootstrap';
+
+// Custom styles
+.navbar {
+  margin-bottom: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.btn-outline-danger {
+  margin-left: 10px;
+}
+
+// Table styles
+.table {
+  background-color: white;
+  border-radius: 0.25rem;
+  
+  th {
+    background-color: #f8f9fa;
+  }
+  
+  td, th {
+    vertical-align: middle;
+  }
+}
+
+// Form styles
+.form-control, .form-select {
+  border-radius: 0.25rem;
+} 

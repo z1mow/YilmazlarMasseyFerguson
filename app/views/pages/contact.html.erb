@@ -14,56 +14,12 @@
 <!-- Contact Info -->
 <section class="py-5">
   <div class="container">
-    <div class="row">
-      <!-- Contact Form -->
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="mb-4">Bize Ulaşın</h3>
-            <%= form_for Contact.new do |f| %>
-              <div class="mb-3">
-                <%= f.label :name, "Adınız Soyadınız", class: "form-label" %>
-                <%= f.text_field :name, class: "form-control", required: true %>
-              </div>
-
-              <div class="mb-3">
-                <%= f.label :email, "E-posta Adresiniz", class: "form-label" %>
-                <%= f.email_field :email, class: "form-control", required: true %>
-              </div>
-
-              <div class="mb-3">
-                <%= f.label :phone, "Telefon Numaranız", class: "form-label" %>
-                <%= f.telephone_field :phone, class: "form-control", required: true %>
-              </div>
-
-              <div class="mb-3">
-                <%= f.label :message, "Mesajınız", class: "form-label" %>
-                <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
-              </div>
-
-              <%= f.submit "Gönder", class: "btn btn-danger" %>
-            <% end %>
-
-            <% if flash[:notice] %>
-              <div class="alert alert-success mt-3">
-                <%= flash[:notice] %>
-              </div>
-            <% end %>
-
-            <% if flash[:alert] %>
-              <div class="alert alert-danger mt-3">
-                <%= flash[:alert] %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      
+    <div class="row justify-content-center">
       <!-- Contact Information -->
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <div class="row g-4">
           <!-- Gaziantep Plaza -->
-          <div class="col-12">
+          <div class="col-md-6">
             <div class="card border-0 shadow-sm h-100">
               <div class="card-body">
                 <h4 class="card-title">Gaziantep Plaza</h4>
@@ -80,7 +36,7 @@
           </div>
           
           <!-- Nizip Şube -->
-          <div class="col-12">
+          <div class="col-md-6">
             <div class="card border-0 shadow-sm h-100">
               <div class="card-body">
                 <h4 class="card-title">Nizip Şube</h4>
