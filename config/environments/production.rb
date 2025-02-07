@@ -89,8 +89,10 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Do not dump schema after migrations.
+  # Disable Active Record
+  config.active_record.migration_error = false
   config.active_record.dump_schema_after_migration = false
+  config.active_record.database_selector = false
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
