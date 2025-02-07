@@ -20,17 +20,17 @@ Rails.application.configure do
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
-  # Disable serving static files from `public/`
-  config.public_file_server.enabled = false
+  # Enable serving static files from `public/`
+  config.public_file_server.enabled = true
 
   # Compress CSS using a preprocessor.
   config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
+
+  # Allow assets to be compiled on the fly if needed
+  config.assets.compile = true
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
@@ -43,10 +43,6 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
   # config.action_cable.allowed_request_origins = [ "http://example.com", /http:\/\/example.*/ ]
-
-  # Assume all access to the app is happening through a SSL-terminating reverse proxy.
-  # Can be used together with config.force_ssl for Strict-Transport-Security and secure cookies.
-  # config.assume_ssl = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
@@ -88,10 +84,10 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Enable Active Record
-  config.active_record.migration_error = :page_load
-  config.active_record.dump_schema_after_migration = true
-  config.active_record.database_selector = { delay: 2.seconds }
+  # Disable Active Record
+  config.active_record.migration_error = false
+  config.active_record.dump_schema_after_migration = false
+  config.active_record.database_selector = false
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
