@@ -1,12 +1,479 @@
-<!-- Coming Soon Section -->
-<div class="container py-5">
-  <div class="row justify-content-center text-center">
-    <div class="col-md-8">
-      <div class="coming-soon-content">
-        <i class="fas fa-wrench fa-4x text-danger mb-4"></i>
-        <h2 class="display-4 mb-4">Yakında Sizlerle</h2>
-        <p class="lead text-muted">Servis hizmetlerimiz hakkında detaylı bilgilere çok yakında buradan ulaşabileceksiniz.</p>
+<!-- Hero Section -->
+<div class="service-hero-section position-relative">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative">
+    <div class="row min-vh-50 align-items-center py-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-3 fw-bold text-white mb-4">Servis Hizmetlerimiz</h1>
+        <p class="lead text-white mb-4">Tüm işleriniz için Massey Ferguson'unuza güveniyorsunuz. Massey Ferguson bayinizden alacağınız MF Care hizmeti, makinenizden maksimum performansı ve çalışma süresini elde etmenizi sağlar.</p>
+        <a href="#service-options" class="btn btn-danger btn-lg rounded-pill px-4">Servis Seçeneklerini İncele</a>
       </div>
     </div>
   </div>
-</div> 
+</div>
+
+<!-- SERVİS SEÇENEKLERİ -->
+<section id="service-options" class="service-options py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h6 class="text-danger text-uppercase fw-bold mb-3">Servis Seçenekleri</h6>
+      <h2 class="display-5 fw-bold">SERVİS VE BAKIM SEÇENEKLERİNİZ</h2>
+      <div class="title-separator mx-auto my-4"></div>
+    </div>
+    
+    <!-- Tek Seferlik Servis -->
+    <div class="service-card mb-5">
+      <div class="row align-items-center g-0">
+        <div class="col-md-6">
+          <div class="service-image h-100">
+            <img src="<%= asset_path('service-images/tek_seferlik_servis.jpg') %>" alt="Tek Seferlik Servis" class="img-cover">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="service-content p-4 p-lg-5">
+            <div class="service-icon mb-4">
+              <i class="fas fa-tools fa-2x text-danger"></i>
+            </div>
+            <h3 class="h2 mb-4">Tek Seferlik Servis</h3>
+            <p class="mb-4">Massey Ferguson bayiniz bir görsel sağlık kontrolü gerçekleştirerek, istendiği takdirde bir ara servis veya ana servis için size fiyat teklifi sunabilir.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Kapsamlı sistem kontrolü</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Detaylı durum raporu</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Yazılım güncellemeleri</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MF Care -->
+    <div class="service-card mb-5">
+      <div class="row align-items-center g-0 flex-md-row-reverse">
+        <div class="col-md-6">
+          <div class="service-image h-100 bg-light d-flex align-items-center justify-content-center p-5">
+            <img src="<%= asset_path('service-images/mf_care.png') %>" alt="MF Care" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="service-content p-4 p-lg-5">
+            <div class="service-icon mb-4">
+              <i class="fas fa-shield-alt fa-2x text-danger"></i>
+            </div>
+            <h3 class="h2 mb-4">MF Care – Servis ve Garanti</h3>
+            <div class="mb-4">
+              <h4 class="h5 text-danger">MF Care 2 seviyede sunulur:</h4>
+              <div class="care-level mt-4">
+                <h5 class="h6 d-flex align-items-center">
+                  <span class="badge bg-silver rounded-circle me-2">S</span>
+                  MF Care Silver
+                </h5>
+                <p class="ms-4 mb-3">Düzenli bakım için servis sözleşmesi (10.000 saate kadar)</p>
+              </div>
+              <div class="care-level">
+                <h5 class="h6 d-flex align-items-center">
+                  <span class="badge bg-warning rounded-circle me-2">G</span>
+                  MF Care Gold
+                </h5>
+                <p class="ms-4">Onarım için uzatılmış garanti sözleşmesi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eski Makine Servisi -->
+    <div class="service-card">
+      <div class="row align-items-center g-0">
+        <div class="col-md-6">
+          <div class="service-image h-100">
+            <img src="<%= asset_path('service-images/eski_makine_servisi.jpg') %>" alt="Eski Makine Servisi" class="img-cover">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="service-content p-4 p-lg-5">
+            <div class="service-icon mb-4">
+              <i class="fas fa-history fa-2x text-danger"></i>
+            </div>
+            <h3 class="h2 mb-4">Eski Makine Servisi</h3>
+            <p class="mb-4">Son servisinizi yaptıralı uzun zaman olduysa, Massey Ferguson bayiniz kapsamlı bir kontrol ve değerlendirme hizmeti sunar.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Görsel sağlık kontrolü</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Sistem performans analizi</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Detaylı durum raporu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEDEN BAYİNİZİ KULLANMALISINIZ -->
+<section class="why-dealer py-5 bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h6 class="text-danger text-uppercase fw-bold mb-3">Neden Biz?</h6>
+      <h2 class="display-5 fw-bold">NEDEN MASSEY FERGUSON BAYİNİZİ<br>TERCİH ETMELİSİNİZ?</h2>
+      <div class="title-separator mx-auto my-4"></div>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card text-center">
+          <div class="feature-icon mb-4">
+            <div class="icon-circle">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+          </div>
+          <h3 class="h4 mb-3">Teknik Bilgi</h3>
+          <p>Fransa Beauvais'deki birinci sınıf Massey Ferguson eğitim merkezinden sertifikalı teknisyenler.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card text-center">
+          <div class="feature-icon mb-4">
+            <div class="icon-circle">
+              <i class="fas fa-tools"></i>
+            </div>
+          </div>
+          <h3 class="h4 mb-3">Özel Ekipman</h3>
+          <p>En son teknoloji diagnostik ekipmanlar ve özel servis aletleri.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card text-center">
+          <div class="feature-icon mb-4">
+            <div class="icon-circle">
+              <i class="fas fa-truck"></i>
+            </div>
+          </div>
+          <h3 class="h4 mb-3">Hızlı Destek</h3>
+          <p>İhtiyaç duyduğunuz her an yanınızda, hızlı ve güvenilir servis desteği.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card text-center">
+          <div class="feature-icon mb-4">
+            <div class="icon-circle">
+              <i class="fas fa-cogs"></i>
+            </div>
+          </div>
+          <h3 class="h4 mb-3">Orijinal Parçalar</h3>
+          <p>Geniş yedek parça stoğu ile minimum bekleme süresi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGCO UZMANLIĞI VE DESTEĞİ -->
+<section class="agco-support py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h6 class="text-danger text-uppercase fw-bold mb-3">AGCO Desteği</h6>
+      <h2 class="display-5 fw-bold">MASSEY FERGUSON BAYİ SERVİSİ:<br>AGCO DESTEĞİYLE</h2>
+      <div class="title-separator mx-auto my-4"></div>
+      <p class="lead col-lg-8 mx-auto">AGCO, dünyanın en büyük tarım makineleri şirketidir. Müşterilerimize ve makinelerine birinci sınıf satış sonrası servis desteği sunmamızı sağlayan bilgi birikimimizle gurur duyuyoruz.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="support-card h-100">
+          <div class="card-image position-relative">
+            <div class="image-container">
+              <img src="<%= asset_path('service-images/agco_tech_connect.jpg') %>" alt="AGCO Tech Connect" class="img-fluid w-100">
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h3 class="h4 mb-3">AGCO Tech Connect</h3>
+            <p>Yeni küresel platformumuz ile servis teknisyenlerimiz tüm teknik bilgi ve destek hizmetlerine anında erişim sağlar.</p>
+            <ul class="feature-list mt-4">
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Anlık teknik destek</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Online dokümantasyon</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Hızlı problem çözümü</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="support-card h-100">
+          <div class="card-image position-relative">
+            <div class="image-container">
+              <img src="<%= asset_path('service-images/agconet.jpg') %>" alt="AGCOnet" class="img-fluid w-100">
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h3 class="h4 mb-3">AGCOnet</h3>
+            <p>Teknisyenlerimiz için özel intranet sistemi ile güncel teknik bilgilere ve dokümanlara anında erişim.</p>
+            <ul class="feature-list mt-4">
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Günlük güncellemeler</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Teknik dökümanlar</li>
+              <li><i class="fas fa-check-circle text-danger me-2"></i>Servis bültenleri</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEZON DIŞI SERVİS -->
+<section class="off-season-service py-5 bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h6 class="text-danger text-uppercase fw-bold mb-3">Sezon Dışı Servis</h6>
+      <h2 class="display-5 fw-bold">MASSEY FERGUSON<br>SEZON DIŞI SERVİSİ</h2>
+      <div class="title-separator mx-auto my-4"></div>
+      <p class="lead col-lg-8 mx-auto">15 dakikalık görsel muayeneden tam günlük servis muayenesine kadar, ihtiyaçlarınıza özel çözümler sunuyoruz.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="season-card">
+          <div class="card-icon mb-4">
+            <i class="fas fa-calendar-check fa-3x text-danger"></i>
+          </div>
+          <h3 class="h4 mb-3">Sezon Dışı Muayene</h3>
+          <ul class="season-features">
+            <li><i class="fas fa-check text-danger me-2"></i>Zaman çizelgeli kontrol</li>
+            <li><i class="fas fa-check text-danger me-2"></i>Risk analizi</li>
+            <li><i class="fas fa-check text-danger me-2"></i>Verimlilik optimizasyonu</li>
+            <li><i class="fas fa-check text-danger me-2"></i>Kayıp minimizasyonu</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="season-card">
+          <div class="card-icon mb-4">
+            <i class="fas fa-flag-checkered fa-3x text-danger"></i>
+          </div>
+          <h3 class="h4 mb-3">Sezon Sonrası Muayene</h3>
+          <p>Yoğun sezon sonrası makinenizin kapsamlı kontrolü ve bakımı ile bir sonraki sezona hazır olun.</p>
+          <a href="#" class="btn btn-outline-danger rounded-pill mt-3">Detaylı Bilgi <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="season-card">
+          <div class="card-icon mb-4">
+            <i class="fas fa-play-circle fa-3x text-danger"></i>
+          </div>
+          <h3 class="h4 mb-3">Sezon Öncesi Muayene</h3>
+          <p>Yeni sezon öncesi makinenizin durumunu değerlendirin ve gerekli önlemleri alın.</p>
+          <a href="#" class="btn btn-outline-danger rounded-pill mt-3">Detaylı Bilgi <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Styles -->
+<style>
+:root {
+  --primary-color: #E31E24;
+  --secondary-color: #333333;
+  --light-gray: #f8f9fa;
+}
+
+/* Hero Section */
+.service-hero-section {
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('<%= asset_path("service-images/banner.png") %>');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+/* Section Headers */
+.section-header {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title-separator {
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+/* Service Cards */
+.service-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.service-features li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  height: 100%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background: var(--light-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: var(--primary-color);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-circle {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Support Cards */
+.support-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+}
+
+.support-card .card-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.support-card .image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-gray);
+}
+
+.support-card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Season Cards */
+.season-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-5px);
+}
+
+.season-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.season-features li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Badges */
+.bg-silver {
+  background-color: #C0C0C0;
+  color: white;
+}
+
+/* Care Levels */
+.care-level {
+  background: var(--light-gray);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .service-image {
+    min-height: 200px;
+  }
+  
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+</style> 
