@@ -1,0 +1,138 @@
+<!-- Hero Section -->
+<div class="agricultural-hero-section position-relative">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative">
+    <div class="row min-vh-50 align-items-center py-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-3 fw-bold text-white mb-4">Tarım Makinaları</h1>
+        <p class="lead text-white mb-4">Yılmazlar Massey Ferguson güvencesiyle kaliteli ve güvenilir tarım makinaları</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brands Section -->
+<section class="brands-section py-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Matris Card -->
+      <div class="col-md-6">
+        <div class="brand-card h-100">
+          <div class="card shadow-sm h-100">
+            <%= image_tag "agricultural-equipment/matris-logo.png", alt: "Matris", class: "card-img-top brand-logo p-4" %>
+            <div class="card-body">
+              <h3 class="card-title h4 mb-3">Matris Tarım Makinaları</h3>
+              <p class="card-text">47 yıllık tecrübe ile üretilen kaliteli tarım makinaları</p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="fas fa-check text-success me-2"></i>Ekim Makineleri</li>
+                <li><i class="fas fa-check text-success me-2"></i>Toprak İşleme Makineleri</li>
+                <li><i class="fas fa-check text-success me-2"></i>Çeşitli Tarım Ekipmanları</li>
+              </ul>
+              <%= link_to "Ürünleri İncele", agricultural_equipment_matris_path, class: "btn btn-danger w-100" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alpler Card -->
+      <div class="col-md-6">
+        <div class="brand-card h-100">
+          <div class="card shadow-sm h-100">
+            <%= image_tag "agricultural-equipment/alpler-logo.png", alt: "Alpler", class: "card-img-top brand-logo p-4" %>
+            <div class="card-body">
+              <h3 class="card-title h4 mb-3">Alpler Tarım Makinaları</h3>
+              <p class="card-text">Profesyonel çiftçilerin tercihi, yenilikçi tarım makinaları</p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="fas fa-check text-success me-2"></i>Pulluklar</li>
+                <li><i class="fas fa-check text-success me-2"></i>Toprak İşleme Ekipmanları</li>
+                <li><i class="fas fa-check text-success me-2"></i>Tesviye Makineleri</li>
+              </ul>
+              <%= link_to "Ürünleri İncele", agricultural_equipment_alpler_path, class: "btn btn-danger w-100" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Montano Card -->
+      <div class="col-md-6">
+        <div class="brand-card h-100">
+          <div class="card shadow-sm h-100">
+            <%= image_tag "agricultural-equipment/montano-logo.png", alt: "Montano", class: "card-img-top brand-logo p-4" %>
+            <div class="card-body">
+              <h3 class="card-title h4 mb-3">Montano Tarım Makinaları</h3>
+              <p class="card-text">Kaliteli ve güvenilir tarım ekipmanları</p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="fas fa-check text-success me-2"></i>Gübre Serpme Makinaları</li>
+                <li><i class="fas fa-check text-success me-2"></i>İlaçlama Makinaları</li>
+                <li><i class="fas fa-check text-success me-2"></i>Kaldıraç Sistemleri</li>
+              </ul>
+              <%= link_to "Ürünleri İncele", "#", class: "btn btn-danger w-100" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parlayan Card -->
+      <div class="col-md-6">
+        <div class="brand-card h-100">
+          <div class="card shadow-sm h-100">
+            <%= image_tag "agricultural-equipment/parlayan-logo.png", alt: "Parlayan", class: "card-img-top brand-logo p-4" %>
+            <div class="card-body">
+              <h3 class="card-title h4 mb-3">Parlayan Tarım Makinaları</h3>
+              <p class="card-text">56 yıllık tecrübe ile zirai mücadele ekipmanları</p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="fas fa-check text-success me-2"></i>Tarla Pulverizatörleri</li>
+                <li><i class="fas fa-check text-success me-2"></i>Atomizörler</li>
+                <li><i class="fas fa-check text-success me-2"></i>Bahçe Pulverizatörleri</li>
+              </ul>
+              <%= link_to "Ürünleri İncele", "#", class: "btn btn-danger w-100" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.agricultural-hero-section {
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('<%= asset_path("agricultural-equipment/banner.jpg") %>');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+.brand-logo {
+  height: 120px;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.brand-card .card {
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.brand-card .card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .btn {
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .brand-card {
+    margin-bottom: 2rem;
+  }
+}
+</style>

@@ -57,12 +57,14 @@
       .navbar-nav {
         margin-left: auto;
         align-items: center;
+        justify-content: flex-end;
+        width: 100%;
       }
 
       .nav-link {
         color: var(--secondary-color) !important;
         font-weight: 500;
-        padding: 0.5rem 1.5rem !important;
+        padding: 0.5rem 1rem !important;
         font-size: 1rem;
         white-space: nowrap;
       }
@@ -72,7 +74,7 @@
       }
 
       .nav-item {
-        margin: 0 5px;
+        margin: 0 2px;
         display: flex;
         align-items: center;
       }
@@ -219,6 +221,17 @@
         color: var(--primary-color);
         opacity: 1;
       }
+
+      .dropdown-item:hover, 
+      .dropdown-item:focus {
+        background-color: var(--primary-color) !important;
+        color: white !important;
+      }
+
+      .dropdown-item {
+        color: var(--secondary-color);
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
 
@@ -267,6 +280,9 @@
             </li>
             <li class="nav-item">
               <%= link_to "Traktörler", products_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Tarım Makinaları", tarim_makinalari_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to "Servis", service_path, class: "nav-link" %>
