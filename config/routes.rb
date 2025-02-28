@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'yedek-parca', to: 'pages#spare_parts', as: :spare_parts
   get 'iletisim', to: 'pages#contact', as: :contact
   
+  # KVKK Sayfaları
+  get 'kvkk-politikasi', to: 'pages#kvkk_policy', as: :kvkk_policy
+  get 'kvkk-aydinlatma-metni', to: 'pages#kvkk_disclosure', as: :kvkk_disclosure
+  
   # Agricultural Equipment Routes
   get 'tarim-makinalari', to: 'agricultural_equipment#index'
   get 'tarim-makinalari/matris', to: 'agricultural_equipment#matris'
