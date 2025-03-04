@@ -140,6 +140,29 @@
   </div>
 </section>
 
+<!-- AGCO Parts CTA Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="cta-card bg-danger text-white p-4 p-md-5 rounded-3 shadow">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h3 class="mb-3">Orijinal AGCO Parçaları Hakkında Daha Fazla Bilgi</h3>
+              <p class="mb-md-0">Massey Ferguson makineniz için en uygun orijinal yedek parçalar hakkında detaylı bilgi almak için AGCO Parts resmi web sitesini ziyaret edebilirsiniz.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+              <a href="https://www.agcopartsandservice.com/eame/tr_TR/parts/brands/massey-ferguson/genuine-agco-parts.html" target="_blank" class="btn btn-light btn-lg">
+                <i class="fas fa-external-link-alt me-2"></i>Ziyaret Et
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
 .spare-parts-hero-section {
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('<%= asset_path("spare-parts-images/banner.png") %>');
@@ -238,5 +261,15 @@
 .card-body p {
   color: #666;
   line-height: 1.6;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #c41c23 100%);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-5px);
 }
 </style> 
