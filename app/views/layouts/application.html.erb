@@ -25,6 +25,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -33,22 +39,46 @@
       :root {
         --primary-color: #E31E24;
         --secondary-color: #333333;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --border-radius: 10px;
+        --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        --transition: all 0.3s ease;
       }
       
       body {
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        overflow-x: hidden;
       }
 
+      /* Top Bar Styles */
       .top-bar {
-        background-color: #f8f9fa;
+        background-color: var(--light-color);
         padding: 8px 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-size: 0.9rem;
       }
 
+      .top-bar a {
+        color: var(--secondary-color);
+        transition: var(--transition);
+      }
+
+      .top-bar a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Navbar Styles */
       .navbar {
         padding: 15px 0;
         background-color: white !important;
-        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        padding: 10px 0;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
       }
 
       .navbar-brand {
@@ -60,6 +90,11 @@
       .navbar-brand img {
         height: 60px;
         width: auto;
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled .navbar-brand img {
+        height: 50px;
       }
 
       .navbar-nav {
@@ -75,10 +110,28 @@
         padding: 0.5rem 1rem !important;
         font-size: 1rem;
         white-space: nowrap;
+        position: relative;
+        transition: var(--transition);
       }
 
       .nav-link:hover {
         color: var(--primary-color) !important;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--primary-color);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 70%;
       }
 
       .nav-item {
@@ -92,8 +145,8 @@
           background: white;
           padding: 1rem;
           margin-top: 1rem;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          border-radius: var(--border-radius);
+          box-shadow: var(--box-shadow);
         }
         
         .nav-item {
@@ -103,6 +156,18 @@
         .nav-link {
           padding: 0.5rem 1rem !important;
         }
+        
+        .nav-link::after {
+          display: none;
+        }
+      }
+
+      /* Button Styles */
+      .btn {
+        border-radius: 50px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+        transition: var(--transition);
       }
 
       .btn-primary {
@@ -125,8 +190,20 @@
         border-color: var(--primary-color);
       }
 
+      /* Footer Styles */
       footer {
         background-color: #1a1a1a !important;
+        position: relative;
+      }
+
+      footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--primary-color);
       }
 
       .footer-logo img {
@@ -136,109 +213,152 @@
         margin-bottom: 1.5rem;
         background-color: white;
         padding: 10px;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .footer-logo img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       }
 
       .social-links a {
         color: white;
         margin-right: 15px;
         font-size: 1.2rem;
-        transition: color 0.3s ease;
+        transition: var(--transition);
         text-decoration: none;
       }
 
       .social-links a:hover {
         color: var(--primary-color);
+        transform: translateY(-3px);
       }
 
       .contact-info i {
         color: var(--primary-color);
       }
 
-      /* Hero Section Styles */
-      .hero-section {
-        position: relative;
-        height: 400px;
-        overflow: hidden;
+      footer .list-unstyled li {
+        margin-bottom: 10px;
+        transition: var(--transition);
       }
 
-      .hero-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
+      footer .list-unstyled li:hover {
+        transform: translateX(5px);
       }
 
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.65));
-        z-index: 2;
+      footer .list-unstyled a {
+        transition: var(--transition);
       }
 
-      .hero-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        z-index: 10;
-      }
-
-      .hero-section h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 0.5rem;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-
-      .hero-section p {
-        font-size: 1.25rem;
-        color: #666;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-      }
-
-      @media (max-width: 768px) {
-        .hero-section {
-          height: 300px;
-        }
-        
-        .hero-section h1 {
-          font-size: 2rem;
-        }
-        
-        .hero-section p {
-          font-size: 1rem;
-        }
+      footer .list-unstyled a:hover {
+        opacity: 1 !important;
+        color: var(--primary-color) !important;
       }
 
       /* Top bar sosyal medya ikonları için özel stil */
       .top-bar .social-links a {
         color: var(--secondary-color);
         opacity: 0.8;
+        transition: var(--transition);
       }
 
       .top-bar .social-links a:hover {
         color: var(--primary-color);
         opacity: 1;
+        transform: translateY(-3px);
+      }
+
+      /* Dropdown Styles */
+      .dropdown-menu {
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 1rem 0;
+        margin-top: 10px;
+      }
+
+      .dropdown-item {
+        color: var(--secondary-color);
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+        transition: var(--transition);
       }
 
       .dropdown-item:hover, 
       .dropdown-item:focus {
         background-color: var(--primary-color) !important;
         color: white !important;
+        transform: translateX(5px);
       }
 
-      .dropdown-item {
-        color: var(--secondary-color);
-        transition: all 0.3s ease;
+      /* Cookie Banner Styles */
+      .cookie-consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        border-top: 5px solid var(--primary-color);
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+      }
+      
+      .cookie-banner-hide {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      
+      .cookie-content {
+        font-size: 0.9rem;
+      }
+      
+      .cookie-buttons {
+        min-width: 150px;
+      }
+      
+      @media (max-width: 768px) {
+        .cookie-buttons {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: #c41920;
+        transform: translateY(-5px);
       }
     </style>
   </head>
@@ -252,20 +372,23 @@
             <small>
               <i class="fas fa-phone me-2 text-danger"></i>
               <a href="tel:03422352864" class="text-dark text-decoration-none">0342 513 0193</a>
+              <span class="mx-3">|</span>
+              <i class="fas fa-clock me-2 text-danger"></i>
+              <span>Hafta içi: 08:00 - 18:00</span>
             </small>
           </div>
           <div class="col-md-6 text-end">
             <div class="social-links d-flex justify-content-end align-items-center">
-              <a href="https://yilmazlarmasseyferguson.sahibinden.com/" target="_blank" class="me-4">
+              <a href="https://yilmazlarmasseyferguson.sahibinden.com/" target="_blank" class="me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sahibinden.com">
                 <img src="<%= asset_path('sahibinden-logo.png') %>" alt="Sahibinden.com" style="height: 24px; width: auto;">
               </a>
-              <a href="https://www.facebook.com/yilmazlarMasseyferguson" target="_blank" class="me-4">
+              <a href="https://www.facebook.com/yilmazlarMasseyferguson" target="_blank" class="me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook">
                 <img src="<%= asset_path('facebook-logo.png') %>" alt="Facebook" style="height: 24px; width: auto;">
               </a>
-              <a href="https://www.instagram.com/yilmazlarmasseyferguson/" target="_blank" class="me-4">
+              <a href="https://www.instagram.com/yilmazlarmasseyferguson/" target="_blank" class="me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram">
                 <img src="<%= asset_path('instagram-logo.png') %>" alt="Instagram" style="height: 24px; width: auto;">
               </a>
-              <a href="https://www.youtube.com/@ylmazlarmasseyfergusonbayi2716" target="_blank">
+              <a href="https://www.youtube.com/@ylmazlarmasseyfergusonbayi2716" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="YouTube">
                 <img src="<%= asset_path('youtube-logo.png') %>" alt="YouTube" style="height: 24px; width: auto;">
               </a>
             </div>
@@ -275,7 +398,7 @@
     </div>
 
     <!-- Header/Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="/">
           <%= image_tag "ymf_logo.png", alt: "YMF Logo", style: "height: 80px; margin-right: 40px;" %>
@@ -315,6 +438,11 @@
     <!-- Main Content -->
     <%= yield %>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
     <!-- Footer -->
     <footer class="py-5">
       <div class="container">
@@ -342,15 +470,19 @@
           <div class="col-lg-4">
             <h5 class="text-light mb-4">İletişim Bilgileri</h5>
             <div class="contact-info">
-              <p class="text-light opacity-75 mb-2">
+              <p class="text-light opacity-75 mb-3">
                 <i class="fas fa-map-marker-alt me-2"></i>
                 İbn-i Sina Mah. Havaalanı Yolu Bulvarı No:214 Şahinbey/Gaziantep
               </p>
-              <p class="text-light opacity-75 mb-2">
+              <p class="text-light opacity-75 mb-3">
                 <i class="fas fa-phone me-2"></i>
                 <a href="tel:03422352864" class="text-light text-decoration-none">0342 235 2864</a>
               </p>
-              <p class="text-light opacity-75 mb-2">
+              <p class="text-light opacity-75 mb-3">
+                <i class="fas fa-envelope me-2"></i>
+                <a href="mailto:info@yilmazlarmf.com" class="text-light text-decoration-none">info@yilmazlarmf.com</a>
+              </p>
+              <p class="text-light opacity-75 mb-3">
                 <i class="fas fa-clock me-2"></i>
                 Hafta içi: 08:00 - 18:00
               </p>
@@ -358,16 +490,24 @@
           </div>
           <div class="col-lg-4">
             <h5 class="text-light mb-4">Hızlı Erişim</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2"><%= link_to "Ana Sayfa", root_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li class="mb-2"><%= link_to "Hakkımızda", about_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li class="mb-2"><%= link_to "Ürünler", products_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li class="mb-2"><%= link_to "Servis", service_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li class="mb-2"><%= link_to "Yedek Parça", spare_parts_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li class="mb-2"><%= link_to "İletişim", contact_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li class="mb-2"><%= link_to "KVKK Politikası", kvkk_policy_path, class: "text-light text-decoration-none opacity-75" %></li>
-              <li><%= link_to "KVKK Aydınlatma Metni", kvkk_disclosure_path, class: "text-light text-decoration-none opacity-75" %></li>
-            </ul>
+            <div class="row">
+              <div class="col-6">
+                <ul class="list-unstyled">
+                  <li><%= link_to "Ana Sayfa", root_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "Hakkımızda", about_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "Traktörler", products_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "Tarım Makinaları", tarim_makinalari_path, class: "text-light text-decoration-none opacity-75" %></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="list-unstyled">
+                  <li><%= link_to "Servis", service_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "Yedek Parça", spare_parts_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "İletişim", contact_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "KVKK Politikası", kvkk_policy_path, class: "text-light text-decoration-none opacity-75" %></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <hr class="border-secondary my-4">
@@ -382,7 +522,7 @@
     <!-- Çerez Politikası Bildirimi -->
     <div class="cookie-consent-banner" id="cookieConsentBanner">
       <div class="container">
-        <div class="cookie-content p-3 d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+        <div class="cookie-content p-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between">
           <div class="cookie-text mb-3 mb-md-0">
             <p class="mb-0">Bu web sitesi, size en iyi deneyimi sunmak için çerezleri kullanmaktadır. Sitemizi kullanmaya devam ederek, 
             <a href="<%= kvkk_policy_path %>" class="text-primary">KVKK Politikamızı</a> ve 
@@ -397,10 +537,58 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Çerez Politikası Script -->
+    <!-- Custom Scripts -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS animations
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true
+        });
+        
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('mainNav');
+        if (navbar) {
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+          });
+        }
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        if (backToTopButton) {
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+              backToTopButton.classList.add('active');
+            } else {
+              backToTopButton.classList.remove('active');
+            }
+          });
+          
+          backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
+        }
+        
+        // Çerez Politikası
         const cookieBanner = document.getElementById('cookieConsentBanner');
         const cookieAccept = document.getElementById('cookieAccept');
         
@@ -408,7 +596,7 @@
         if (!localStorage.getItem('cookieConsent')) {
           setTimeout(function() {
             cookieBanner.style.display = 'block';
-          }, 500);
+          }, 1000);
         } else {
           cookieBanner.style.display = 'none';
         }
@@ -423,40 +611,5 @@
         });
       });
     </script>
-    
-    <style>
-      .cookie-consent-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #f8f9fa;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        z-index: 1000;
-        display: none;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-      
-      .cookie-banner-hide {
-        opacity: 0;
-        transform: translateY(100%);
-      }
-      
-      .cookie-content {
-        font-size: 0.9rem;
-      }
-      
-      .cookie-buttons {
-        min-width: 150px;
-      }
-      
-      @media (max-width: 768px) {
-        .cookie-buttons {
-          display: flex;
-          justify-content: center;
-          width: 100%;
-        }
-      }
-    </style>
   </body>
 </html>

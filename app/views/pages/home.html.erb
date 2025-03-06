@@ -1,95 +1,355 @@
-<!-- Hero Section -->
-<div class="hero-section position-relative">
-  <%= image_tag "hero-banner.png", class: "hero-background", alt: "Massey Ferguson Banner" %>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="container text-center">
-      <h1 class="display-3 fw-bold mb-3">Yılmazlar Massey Ferguson</h1>
-      <p class="lead mb-4">1969'dan beri güveninizle büyüyoruz</p>
+<!-- Hero Section - Modern Static Banner -->
+<div class="hero-banner position-relative" style="height: 65vh; overflow: hidden;">
+  <%= image_tag "hero-banner.png", class: "w-100 h-100", style: "object-fit: cover;", alt: "Massey Ferguson Banner" %>
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10">
+          <h1 class="display-3 fw-bold text-white mb-4 text-shadow">Yılmazlar Massey Ferguson</h1>
+          <p class="lead fs-4 text-white mb-5">1969'dan beri güveninizle büyüyoruz</p>
+          <div class="d-flex gap-3">
+            <%= link_to "Ürünlerimizi Keşfedin", products_path, class: "btn btn-danger btn-lg px-4 py-2" %>
+            <%= link_to "İletişime Geçin", contact_path, class: "btn btn-outline-light btn-lg px-4 py-2" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Features Section -->
-<section class="py-5">
-  <div class="container">
+<!-- Features Section - Modern Cards with Hover Effects -->
+<section class="py-5 bg-light">
+  <div class="container py-4">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-7 text-center">
+        <h2 class="fw-bold mb-3">Hizmetlerimiz</h2>
+        <p class="lead text-muted">Massey Ferguson'un güvenilir yetkili satıcısı olarak tüm ihtiyaçlarınız için yanınızdayız</p>
+      </div>
+    </div>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body">
-            <div class="text-danger mb-3">
-              <i class="fas fa-tractor fa-3x"></i>
+        <div class="card h-100 border-0 rounded-4 shadow-sm hover-card">
+          <div class="card-body p-4 text-center">
+            <div class="feature-icon bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+              <i class="fas fa-tractor fa-2x"></i>
             </div>
-            <h3 class="card-title h4">Satış</h3>
-            <p class="card-text text-muted mb-4">En yeni Massey Ferguson modellerini keşfedin.</p>
-            <%= link_to "Detaylı Bilgi", products_path, class: "btn btn-outline-danger px-4" %>
+            <h3 class="card-title h4 mb-3">Satış</h3>
+            <p class="card-text text-muted mb-4">En yeni Massey Ferguson modellerini keşfedin. Tarımsal üretiminiz için en uygun traktör ve ekipmanları sunuyoruz.</p>
+            <%= link_to products_path, class: "btn btn-outline-danger px-4 stretched-link" do %>
+              Ürünleri İncele <i class="fas fa-arrow-right ms-2"></i>
+            <% end %>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body">
-            <div class="text-danger mb-3">
-              <i class="fas fa-tools fa-3x"></i>
+        <div class="card h-100 border-0 rounded-4 shadow-sm hover-card">
+          <div class="card-body p-4 text-center">
+            <div class="feature-icon bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+              <i class="fas fa-tools fa-2x"></i>
             </div>
-            <h3 class="card-title h4">Servis</h3>
-            <p class="card-text text-muted mb-4">Profesyonel servis hizmetlerimizle yanınızdayız.</p>
-            <%= link_to "Servis Hizmetleri", service_path, class: "btn btn-outline-danger px-4" %>
+            <h3 class="card-title h4 mb-3">Servis</h3>
+            <p class="card-text text-muted mb-4">Profesyonel servis hizmetlerimizle makinelerinizin performansını ve ömrünü uzatıyoruz. Uzman ekibimizle yanınızdayız.</p>
+            <%= link_to service_path, class: "btn btn-outline-danger px-4 stretched-link" do %>
+              Servis Hizmetleri <i class="fas fa-arrow-right ms-2"></i>
+            <% end %>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body">
-            <div class="text-danger mb-3">
-              <i class="fas fa-cogs fa-3x"></i>
+        <div class="card h-100 border-0 rounded-4 shadow-sm hover-card">
+          <div class="card-body p-4 text-center">
+            <div class="feature-icon bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+              <i class="fas fa-cogs fa-2x"></i>
             </div>
-            <h3 class="card-title h4">Yedek Parça</h3>
-            <p class="card-text text-muted mb-4">Orijinal Massey Ferguson yedek parçaları.</p>
-            <%= link_to "Yedek Parça", spare_parts_path, class: "btn btn-outline-danger px-4" %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About Section -->
-<section class="bg-light py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="text-center mb-4">
-          <h2 class="mb-4">50 Yılı Aşkın Tecrübe</h2>
-          <p class="lead">1969'dan beri Massey Ferguson'un güvenilir yetkili satıcısı olarak hizmetinizdeyiz.</p>
-          <p>Kaliteli ve güvenilir hizmet anlayışımızla müşteri memnuniyetini her zaman ön planda tutuyoruz.</p>
-          <%= link_to "Daha Fazla Bilgi", about_path, class: "btn btn-danger px-4" %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact CTA -->
-<section class="py-5">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-md-8">
-        <h2 class="mb-4">Bizimle İletişime Geçin</h2>
-        <p class="lead mb-4">Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.</p>
-        <div class="row g-3 justify-content-center">
-          <div class="col-auto">
-            <a href="tel:03422352864" class="btn btn-outline-danger px-4">
-              <i class="fas fa-phone me-2"></i>0342 235 2864
-            </a>
-          </div>
-          <div class="col-auto">
-            <%= link_to contact_path, class: "btn btn-danger px-4" do %>
-              <i class="fas fa-envelope me-2"></i>İletişim Formu
+            <h3 class="card-title h4 mb-3">Yedek Parça</h3>
+            <p class="card-text text-muted mb-4">Orijinal Massey Ferguson yedek parçaları ile makinelerinizin performansını koruyun. Geniş stok yelpazemizle hizmetinizdeyiz.</p>
+            <%= link_to spare_parts_path, class: "btn btn-outline-danger px-4 stretched-link" do %>
+              Yedek Parça <i class="fas fa-arrow-right ms-2"></i>
             <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>
+
+<!-- About Section with Image -->
+<section class="py-5">
+  <div class="container py-4">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <%= image_tag "plaza.png", class: "img-fluid rounded-4 shadow", alt: "Yılmazlar Massey Ferguson Plaza" %>
+          <div class="position-absolute top-0 start-0 translate-middle bg-danger text-white rounded-pill py-3 px-4 shadow">
+            <span class="fw-bold">1969'dan beri</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="ps-lg-5">
+          <h6 class="text-danger fw-bold mb-3">HAKKIMIZDA</h6>
+          <h2 class="display-6 fw-bold mb-4">50 Yılı Aşkın Tecrübe</h2>
+          <p class="lead mb-4">1969'dan beri Massey Ferguson'un güvenilir yetkili satıcısı olarak hizmetinizdeyiz.</p>
+          <p class="text-muted mb-4">Kaliteli ve güvenilir hizmet anlayışımızla müşteri memnuniyetini her zaman ön planda tutuyoruz. Gaziantep ve çevre illerde çiftçilerimizin yanında olmaktan gurur duyuyoruz.</p>
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center">
+                <div class="feature-icon bg-danger-subtle rounded-circle d-inline-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                  <i class="fas fa-medal text-danger"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Kaliteli Hizmet</h5>
+                  <p class="text-muted mb-0">Müşteri memnuniyeti odaklı</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center">
+                <div class="feature-icon bg-danger-subtle rounded-circle d-inline-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                  <i class="fas fa-handshake text-danger"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Güvenilir Çözümler</h5>
+                  <p class="text-muted mb-0">Uzman ekip desteği</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%= link_to about_path, class: "btn btn-danger px-4 py-2" do %>
+            Daha Fazla Bilgi <i class="fas fa-arrow-right ms-2"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Showcase -->
+<section class="py-5 bg-white">
+  <div class="container py-4">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-7 text-center">
+        <h2 class="fw-bold mb-3 text-dark">Öne Çıkan Traktörlerimiz</h2>
+        <p class="lead text-muted">Massey Ferguson'un en yeni ve en popüler modelleri</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 rounded-4 shadow-sm h-100">
+          <div class="position-relative">
+            <div class="text-center p-4" style="height: 280px; display: flex; align-items: center; justify-content: center;">
+              <%= image_tag "tractor-images/mf2600.png", style: "max-height: 100%; max-width: 100%; object-fit: contain;", alt: "Massey Ferguson 2600" %>
+            </div>
+            <div class="position-absolute top-0 start-0 m-3">
+              <span class="badge bg-danger px-3 py-2 rounded-pill">Ekonomik</span>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h4 class="card-title mb-3 text-center">Massey Ferguson 2600</h4>
+            <p class="card-text text-muted text-center">Ekonomik ve dayanıklı yapısıyla küçük ve orta ölçekli çiftlikler için ideal çözüm.</p>
+            <div class="text-center mt-4">
+              <%= link_to products_path, class: "btn btn-outline-danger px-4" do %>
+                Detaylı Bilgi <i class="fas fa-arrow-right ms-2"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 rounded-4 shadow-sm h-100">
+          <div class="text-center p-4" style="height: 280px; display: flex; align-items: center; justify-content: center;">
+            <%= image_tag "tractor-images/mf3.png", style: "max-height: 100%; max-width: 100%; object-fit: contain;", alt: "Massey Ferguson 3" %>
+          </div>
+          <div class="card-body p-4">
+            <h4 class="card-title mb-3 text-center">Massey Ferguson 3</h4>
+            <p class="card-text text-muted text-center">Kompakt yapısı ve yüksek manevra kabiliyeti ile her türlü arazi koşulunda üstün performans.</p>
+            <div class="text-center mt-4">
+              <%= link_to products_path, class: "btn btn-outline-danger px-4" do %>
+                Detaylı Bilgi <i class="fas fa-arrow-right ms-2"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 rounded-4 shadow-sm h-100">
+          <div class="position-relative">
+            <div class="text-center p-4" style="height: 280px; display: flex; align-items: center; justify-content: center;">
+              <%= image_tag "tractor-images/mf5s.png", style: "max-height: 100%; max-width: 100%; object-fit: contain;", alt: "Massey Ferguson 5S" %>
+            </div>
+            <div class="position-absolute top-0 start-0 m-3">
+              <span class="badge bg-danger px-3 py-2 rounded-pill">Yeni Model</span>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h4 class="card-title mb-3 text-center">Massey Ferguson 5S</h4>
+            <p class="card-text text-muted text-center">Yeni nesil teknoloji ile donatılmış, orta sınıf çiftlikler için ideal, çok yönlü traktör serisi.</p>
+            <div class="text-center mt-4">
+              <%= link_to products_path, class: "btn btn-outline-danger px-4" do %>
+                Detaylı Bilgi <i class="fas fa-arrow-right ms-2"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <%= link_to products_path, class: "btn btn-danger btn-lg px-5 py-2" do %>
+        Tüm Ürünleri Görüntüle <i class="fas fa-arrow-right ms-2"></i>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+  <div class="container py-4">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-7 text-center">
+        <h6 class="text-danger fw-bold mb-3">MÜŞTERİ YORUMLARI</h6>
+        <h2 class="fw-bold mb-3">Müşterilerimiz Ne Diyor?</h2>
+        <p class="lead text-muted">Yılların tecrübesi ve güveniyle müşterilerimizin memnuniyeti bizim için en önemli değerdir</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card testimonial-card border-0 rounded-4 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="d-flex mb-4">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <p class="card-text mb-4">"Yılmazlar Massey Ferguson'dan aldığım traktör ile işlerim çok kolaylaştı. Servis hizmetleri de çok iyi, her zaman yanımızdalar."</p>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <span class="fw-bold">AY</span>
+              </div>
+              <div>
+                <h5 class="mb-0">Ahmet Yılmaz</h5>
+                <p class="text-muted mb-0">Çiftçi, Gaziantep</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card testimonial-card border-0 rounded-4 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="d-flex mb-4">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <p class="card-text mb-4">"Uzun yıllardır Massey Ferguson kullanıyorum ve Yılmazlar'dan aldığım her traktörden çok memnunum. Servis hizmetleri de çok hızlı ve kaliteli."</p>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <span class="fw-bold">MK</span>
+              </div>
+              <div>
+                <h5 class="mb-0">Mehmet Kaya</h5>
+                <p class="text-muted mb-0">Çiftçi, Kilis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card testimonial-card border-0 rounded-4 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="d-flex mb-4">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <p class="card-text mb-4">"Yedek parça konusunda hiç sorun yaşamadım. Her zaman stokta bulunuyor ve hızlı teslimat yapılıyor. Teşekkürler Yılmazlar Massey Ferguson."</p>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <span class="fw-bold">FD</span>
+              </div>
+              <div>
+                <h5 class="mb-0">Fatma Demir</h5>
+                <p class="text-muted mb-0">Çiftçi, Adıyaman</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="py-5 bg-danger text-white">
+  <div class="container py-4">
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-lg-7">
+        <h2 class="display-6 fw-bold mb-3">Bizimle İletişime Geçin</h2>
+        <p class="lead mb-0">Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end">
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-lg-end">
+          <a href="tel:03422352864" class="btn btn-light btn-lg px-4">
+            <i class="fas fa-phone me-2"></i>0342 235 2864
+          </a>
+          <%= link_to contact_path, class: "btn btn-outline-light btn-lg px-4" do %>
+            <i class="fas fa-envelope me-2"></i>İletişim Formu
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Styles for this page -->
+<style>
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+  }
+  
+  .product-card {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card img {
+    transition: transform 0.5s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .testimonial-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 60vh !important;
+    }
+  }
+</style> 
