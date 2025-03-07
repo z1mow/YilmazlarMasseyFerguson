@@ -1,108 +1,190 @@
-<!-- Page Header -->
-<div class="bg-light py-5">
-  <div class="container">
-    <h1 class="display-4">Hakkımızda</h1>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><%= link_to "Ana Sayfa", root_path %></li>
-        <li class="breadcrumb-item active" aria-current="page">Hakkımızda</li>
-      </ol>
-    </nav>
+<!-- Hero Section -->
+<div class="about-hero-section position-relative d-flex align-items-center">
+  <div class="overlay"></div>
+  <div class="container position-relative z-index-1">
+    <div class="row">
+      <div class="col-lg-8 fade-in-up" style="animation-delay: 0.2s;">
+        <h1 class="display-3 fw-bold text-white mb-4 text-shadow">Hakkımızda</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Ana Sayfa", root_path, class: "text-white" %></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Hakkımızda</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- History Section -->
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <h2 class="mb-4">Tarihçemiz</h2>
-        <div class="timeline">
-          <div class="mb-4">
-            <h5 class="text-danger">1969</h5>
-            <p>Şakir Yılmaz Öğüt tarafından Massey Ferguson traktörlerinin yetkili servisliği alındı.</p>
+<section class="history-section py-5">
+  <div class="container py-4">
+    <div class="row align-items-start">
+      <div class="col-lg-6 mb-5 mb-lg-0 fade-in-left" style="animation-delay: 0.3s;">
+        <div class="section-header mb-5">
+          <h6 class="text-danger text-uppercase fw-bold mb-3">Hikayemiz</h6>
+          <h2 class="display-5 fw-bold">Tarihçemiz</h2>
+          <div class="title-separator my-4"></div>
+          <p class="lead">1969'dan günümüze uzanan Massey Ferguson yolculuğumuz</p>
+        </div>
+        
+        <div class="history-timeline">
+          <div class="timeline-item" data-year="1969">
+            <div class="timeline-content animated-card" style="animation-delay: 0.4s;">
+              <h5 class="timeline-year">1969</h5>
+              <div class="timeline-body">
+                <p>Şakir Yılmaz Öğüt tarafından Massey Ferguson traktörlerinin yetkili servisliği alındı.</p>
+              </div>
+            </div>
           </div>
           
-          <div class="mb-4">
-            <h5 class="text-danger">1980'ler</h5>
-            <p>Traktör sektörünün atağa geçtiği bu yıllarda kaliteli ve güvenilir hizmet anlayışıyla büyümemizi ve müşteri portföyümüzü sürekli arttırdık.</p>
+          <div class="timeline-item" data-year="1980">
+            <div class="timeline-content animated-card" style="animation-delay: 0.5s;">
+              <h5 class="timeline-year">1980'ler</h5>
+              <div class="timeline-body">
+                <p>Traktör sektörünün atağa geçtiği bu yıllarda kaliteli ve güvenilir hizmet anlayışıyla büyümemizi ve müşteri portföyümüzü sürekli arttırdık.</p>
+              </div>
+            </div>
           </div>
           
-          <div class="mb-4">
-            <h5 class="text-danger">1985</h5>
-            <p>Massey Ferguson Yedek Parça Bayiliğini bünyemize katarak, bölgemizde satış sonrası hizmetlerde %100 müşteri memnuniyeti çerçevesinde çalışmalarımıza hız kattık.</p>
+          <div class="timeline-item" data-year="1985">
+            <div class="timeline-content animated-card" style="animation-delay: 0.6s;">
+              <h5 class="timeline-year">1985</h5>
+              <div class="timeline-body">
+                <p>Massey Ferguson Yedek Parça Bayiliğini bünyemize katarak, bölgemizde satış sonrası hizmetlerde %100 müşteri memnuniyeti çerçevesinde çalışmalarımıza hız kattık.</p>
+              </div>
+            </div>
           </div>
           
-          <div class="mb-4">
-            <h5 class="text-danger">2000'ler</h5>
-            <p>Türkiye'nin her noktasına toptan ve perakende yedek parça satışı yaparak Güneydoğu Anadolu'dan tüm Türkiye'ye Massey Ferguson Orijinal Yedek Parça satışı gerçekleştirdik.</p>
+          <div class="timeline-item" data-year="2000">
+            <div class="timeline-content animated-card" style="animation-delay: 0.7s;">
+              <h5 class="timeline-year">2000'ler</h5>
+              <div class="timeline-body">
+                <p>Türkiye'nin her noktasına toptan ve perakende yedek parça satışı yaparak Güneydoğu Anadolu'dan tüm Türkiye'ye Massey Ferguson Orijinal Yedek Parça satışı gerçekleştirdik.</p>
+              </div>
+            </div>
           </div>
           
-          <div class="mb-4">
-            <h5 class="text-danger">2009</h5>
-            <p>Massey Ferguson Traktör Satış Bayiliğini de bünyemize katarak Satış - Servis - Yedek Parça departmanlarını tek çatı altında birleştirdik.</p>
+          <div class="timeline-item" data-year="2009">
+            <div class="timeline-content animated-card" style="animation-delay: 0.8s;">
+              <h5 class="timeline-year">2009</h5>
+              <div class="timeline-body">
+                <p>Massey Ferguson Traktör Satış Bayiliğini de bünyemize katarak Satış - Servis - Yedek Parça departmanlarını tek çatı altında birleştirdik.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body">
-            <h3 class="card-title mb-4">Yönetim Kadromuz</h3>
-            
-            <div class="mb-4">
-              <h5 class="text-danger">Genel Müdür</h5>
-              <p class="mb-2 fw-semibold">Mehmet Necip Öğüt</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-phone me-2 text-danger"></i>
-                <a href="tel:05336568975" class="text-dark text-decoration-none">0533 656 89 75</a>
-              </div>
+      
+      <div class="col-lg-6 fade-in-right" style="animation-delay: 0.5s;">
+        <div class="management-card h-100">
+          <div class="card shadow-lg border-0 rounded-4 h-100">
+            <div class="card-header bg-danger text-white py-4 px-4 rounded-top-4">
+              <h3 class="mb-0">Yönetim Kadromuz</h3>
             </div>
+            <div class="card-body p-4 p-lg-5">
+              <div class="management-team">
+                <div class="team-member mb-4 pb-4 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <div class="team-icon">
+                      <div class="icon-circle bg-danger-subtle">
+                        <i class="fas fa-user-tie text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="team-info">
+                      <h5 class="text-danger mb-1">Genel Müdür</h5>
+                      <p class="mb-2 fw-semibold">Mehmet Necip Öğüt</p>
+                      <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-phone me-2 text-danger"></i>
+                        <a href="tel:05336568975" class="text-dark text-decoration-none">0533 656 89 75</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="mb-4">
-              <h5 class="text-danger">Satış Müdürü</h5>
-              <p class="mb-2 fw-semibold">Gökhan Öğüt</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-phone me-2 text-danger"></i>
-                <a href="tel:05324300341" class="text-dark text-decoration-none">0532 430 0341</a>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-envelope me-2 text-danger"></i>
-                <a href="mailto:yilmazlar.satis@agco.com.tr" class="text-dark text-decoration-none">yilmazlar.satis@agco.com.tr</a>
-              </div>
-            </div>
+                <div class="team-member mb-4 pb-4 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <div class="team-icon">
+                      <div class="icon-circle bg-danger-subtle">
+                        <i class="fas fa-user-tie text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="team-info">
+                      <h5 class="text-danger mb-1">Satış Müdürü</h5>
+                      <p class="mb-2 fw-semibold">Gökhan Öğüt</p>
+                      <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-phone me-2 text-danger"></i>
+                        <a href="tel:05324300341" class="text-dark text-decoration-none">0532 430 0341</a>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-envelope me-2 text-danger"></i>
+                        <a href="mailto:yilmazlar.satis@agco.com.tr" class="text-dark text-decoration-none">yilmazlar.satis@agco.com.tr</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="mb-4">
-              <h5 class="text-danger">Yedek Parça Müdürü</h5>
-              <p class="mb-2 fw-semibold">Habeş Öğüt</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-phone me-2 text-danger"></i>
-                <a href="tel:05331300879" class="text-dark text-decoration-none">0533 130 0879</a>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-envelope me-2 text-danger"></i>
-                <a href="mailto:yilmazlar.parca@agco.com.tr" class="text-dark text-decoration-none">yilmazlar.parca@agco.com.tr</a>
-              </div>
-            </div>
+                <div class="team-member mb-4 pb-4 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <div class="team-icon">
+                      <div class="icon-circle bg-danger-subtle">
+                        <i class="fas fa-user-tie text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="team-info">
+                      <h5 class="text-danger mb-1">Yedek Parça Müdürü</h5>
+                      <p class="mb-2 fw-semibold">Habeş Öğüt</p>
+                      <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-phone me-2 text-danger"></i>
+                        <a href="tel:05331300879" class="text-dark text-decoration-none">0533 130 0879</a>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-envelope me-2 text-danger"></i>
+                        <a href="mailto:yilmazlar.parca@agco.com.tr" class="text-dark text-decoration-none">yilmazlar.parca@agco.com.tr</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="mb-4">
-              <h5 class="text-danger">Finans Müdürü</h5>
-              <p class="mb-2 fw-semibold">Şerif Öğüt</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-phone me-2 text-danger"></i>
-                <a href="tel:05066275223" class="text-dark text-decoration-none">0506 627 52 23</a>
-              </div>
-            </div>
-            
-            <div class="mb-4">
-              <h5 class="text-danger">Servis Müdürü</h5>
-              <p class="mb-2 fw-semibold">Hakan Öğüt</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="fas fa-phone me-2 text-danger"></i>
-                <a href="tel:05336575602" class="text-dark text-decoration-none">0533 657 5602</a>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-envelope me-2 text-danger"></i>
-                <a href="mailto:yilmazlar.servis@agco.com.tr" class="text-dark text-decoration-none">yilmazlar.servis@agco.com.tr</a>
+                <div class="team-member mb-4 pb-4 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <div class="team-icon">
+                      <div class="icon-circle bg-danger-subtle">
+                        <i class="fas fa-user-tie text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="team-info">
+                      <h5 class="text-danger mb-1">Finans Müdürü</h5>
+                      <p class="mb-2 fw-semibold">Şerif Öğüt</p>
+                      <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-phone me-2 text-danger"></i>
+                        <a href="tel:05066275223" class="text-dark text-decoration-none">0506 627 52 23</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="team-member">
+                  <div class="d-flex align-items-center">
+                    <div class="team-icon">
+                      <div class="icon-circle bg-danger-subtle">
+                        <i class="fas fa-user-tie text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="team-info">
+                      <h5 class="text-danger mb-1">Servis Müdürü</h5>
+                      <p class="mb-2 fw-semibold">Hakan Öğüt</p>
+                      <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-phone me-2 text-danger"></i>
+                        <a href="tel:05336575602" class="text-dark text-decoration-none">0533 657 5602</a>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="fas fa-envelope me-2 text-danger"></i>
+                        <a href="mailto:yilmazlar.servis@agco.com.tr" class="text-dark text-decoration-none">yilmazlar.servis@agco.com.tr</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -112,32 +194,281 @@
   </div>
 </section>
 
-<!-- Values Section -->
-<section class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center mb-5">Değerlerimiz</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="text-center">
-          <i class="fas fa-handshake fa-3x text-danger mb-3"></i>
-          <h4>Güvenilirlik</h4>
-          <p>50 yılı aşkın tecrübemizle müşterilerimize güvenilir hizmet sunuyoruz.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="text-center">
-          <i class="fas fa-star fa-3x text-danger mb-3"></i>
-          <h4>Kalite</h4>
-          <p>Orijinal Massey Ferguson ürün ve hizmetleriyle en yüksek kaliteyi garanti ediyoruz.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="text-center">
-          <i class="fas fa-users fa-3x text-danger mb-3"></i>
-          <h4>Müşteri Memnuniyeti</h4>
-          <p>Müşteri memnuniyetini her zaman ön planda tutarak hizmet veriyoruz.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> 
+<!-- Custom Styles -->
+<style>
+  :root {
+    --primary-color: #E31E24;
+    --secondary-color: #333333;
+    --light-gray: #f8f9fa;
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .z-index-1 {
+    z-index: 1;
+  }
+  
+  /* Hero Section */
+  .about-hero-section {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('<%= asset_path("about-banner.png") %>');
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+  }
+  
+  /* Section Headers */
+  .title-separator {
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+  
+  /* Timeline Styles */
+  .history-timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+  
+  .history-timeline:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-color);
+    opacity: 0.3;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(227, 30, 36, 0.2);
+  }
+  
+  .timeline-item:after {
+    content: attr(data-year);
+    position: absolute;
+    left: -80px;
+    top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+    opacity: 0;
+  }
+  
+  .timeline-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid var(--primary-color);
+  }
+  
+  .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  .timeline-year {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  /* Team Members */
+  .management-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member {
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateX(5px);
+  }
+  
+  .team-icon {
+    margin-right: 20px;
+  }
+  
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+  }
+  
+  .team-info {
+    flex: 1;
+  }
+  
+  /* Values Section */
+  .values-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('<%= asset_path("values-bg.png") %>') center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+  }
+  
+  .value-card .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-card .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .value-icon .icon-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
+  
+  /* CSS Animasyonları */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animated-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    animation: fadeInLeft 0.6s ease forwards;
+  }
+
+  .fade-in-right {
+    opacity: 0;
+    animation: fadeInRight 0.6s ease forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .history-timeline {
+      padding-left: 30px;
+    }
+    
+    .timeline-item:before {
+      left: -30px;
+    }
+    
+    .timeline-item:after {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-hero-section {
+      min-height: 30vh;
+    }
+  }
+</style>
+
+<!-- Basitleştirilmiş JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sayfa yüklendiğinde animasyonların sorunsuz görünmesi için
+    document.body.classList.add('page-loaded');
+  });
+</script> 

@@ -3,89 +3,208 @@
   <div class="hero-overlay"></div>
   <div class="container position-relative">
     <div class="row min-vh-50 align-items-center py-5">
-      <div class="col-lg-8 mx-auto text-center">
-        <h1 class="display-3 fw-bold text-white mb-4">Tarım Makinaları</h1>
+      <div class="col-lg-8 mx-auto text-center fade-in-up" style="animation-delay: 0.2s;">
+        <h1 class="display-3 fw-bold text-white mb-3">Tarım Makinaları</h1>
         <p class="lead text-white mb-4">Yılmazlar Massey Ferguson güvencesiyle kaliteli ve güvenilir tarım makinaları</p>
+        <div class="d-flex justify-content-center">
+          <a href="#brands" class="btn btn-outline-light btn-lg px-4 rounded-pill scroll-btn">
+            Markalarımızı Keşfedin <i class="fas fa-arrow-down ms-2"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Brands Section -->
-<section class="brands-section py-5">
+<!-- Intro Section -->
+<section class="py-5 bg-light">
   <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6 fade-in-left" style="animation-delay: 0.3s;">
+        <%= image_tag "agricultural-equipment/agricultural-intro.jpg", alt: "Tarım Makinaları", class: "img-fluid rounded-4 shadow-sm", loading: "lazy" %>
+      </div>
+      <div class="col-lg-6 fade-in-right" style="animation-delay: 0.4s;">
+        <div class="ps-lg-4">
+          <h2 class="display-6 fw-bold mb-4">Modern Tarım Çözümleri</h2>
+          <p class="lead mb-4">Yılmazlar Massey Ferguson olarak, modern tarımın ihtiyaç duyduğu her türlü ekipmanı sizlere sunuyoruz.</p>
+          <p class="mb-4">Çiftçilerimizin verimliliğini artırmak, işlerini kolaylaştırmak ve daha kaliteli ürünler elde etmelerini sağlamak için en yenilikçi tarım makinalarını Türk çiftçisinin hizmetine sunuyoruz.</p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center feature-item">
+                <div class="feature-icon-container me-3 bg-danger bg-opacity-10 rounded-circle p-3">
+                  <i class="fas fa-leaf text-danger"></i>
+                </div>
+                <span class="fw-semibold">Sürdürülebilir Tarım</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center feature-item">
+                <div class="feature-icon-container me-3 bg-danger bg-opacity-10 rounded-circle p-3">
+                  <i class="fas fa-seedling text-danger"></i>
+                </div>
+                <span class="fw-semibold">Artan Verimlilik</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center feature-item">
+                <div class="feature-icon-container me-3 bg-danger bg-opacity-10 rounded-circle p-3">
+                  <i class="fas fa-tools text-danger"></i>
+                </div>
+                <span class="fw-semibold">Kolay Kullanım</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center feature-item">
+                <div class="feature-icon-container me-3 bg-danger bg-opacity-10 rounded-circle p-3">
+                  <i class="fas fa-cogs text-danger"></i>
+                </div>
+                <span class="fw-semibold">Dayanıklı Ekipmanlar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brands Section -->
+<section id="brands" class="brands-section py-5">
+  <div class="container">
+    <div class="row mb-5 text-center">
+      <div class="col-lg-8 mx-auto fade-in-up" style="animation-delay: 0.2s;">
+        <h2 class="display-5 fw-bold mb-3">Çalıştığımız Markalar</h2>
+        <p class="lead text-muted">Alanında uzman ve kaliteli ürünler sunan tarım ekipmanları markaları ile çalışmaktayız</p>
+      </div>
+    </div>
     <div class="row g-4">
       <!-- Matris Card -->
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-3 mb-4 brand-col animated-card" style="animation-delay: 0.1s;">
         <div class="brand-card h-100">
-          <div class="card shadow-sm h-100">
-            <%= image_tag "agricultural-equipment/matris-logo.png", alt: "Matris", class: "card-img-top brand-logo p-4" %>
-            <div class="card-body">
-              <h3 class="card-title h4 mb-3">Matris Tarım Makinaları</h3>
+          <div class="card border-0 shadow-sm h-100 position-relative overflow-hidden">
+            <span class="brand-badge">1976'dan beri</span>
+            <div class="brand-logo-container p-4 bg-light">
+              <%= image_tag "agricultural-equipment/matris-logo.png", alt: "Matris", class: "card-img-top brand-logo matris-logo", loading: "lazy" %>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h4 mb-3 text-center">Matris Tarım Makinaları</h3>
               <p class="card-text">47 yıllık tecrübe ile üretilen kaliteli tarım makinaları</p>
-              <ul class="list-unstyled mb-4">
-                <li><i class="fas fa-check text-success me-2"></i>Ekim Makineleri</li>
-                <li><i class="fas fa-check text-success me-2"></i>Toprak İşleme Makineleri</li>
-                <li><i class="fas fa-check text-success me-2"></i>Çeşitli Tarım Ekipmanları</li>
-              </ul>
-              <%= link_to "Ürünleri İncele", "https://www.matristarim.com.tr/TR", class: "btn btn-danger w-100", target: "_blank" %>
+              <div class="mt-3">
+                <h5 class="small text-uppercase text-muted fw-bold mb-2">Ürün Çeşitleri</h5>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Ekim Makineleri</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Toprak İşleme Makineleri</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Çeşitli Tarım Ekipmanları</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-grid">
+                <%= link_to "Ürünleri İncele", "https://www.matristarim.com.tr/TR", class: "btn btn-outline-danger", target: "_blank" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Alpler Card -->
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-3 mb-4 brand-col animated-card" style="animation-delay: 0.2s;">
         <div class="brand-card h-100">
-          <div class="card shadow-sm h-100">
-            <%= image_tag "agricultural-equipment/alpler-logo.png", alt: "Alpler", class: "card-img-top brand-logo p-4" %>
-            <div class="card-body">
-              <h3 class="card-title h4 mb-3">Alpler Tarım Makinaları</h3>
+          <div class="card border-0 shadow-sm h-100 position-relative overflow-hidden">
+            <span class="brand-badge">1964'den beri</span>
+            <div class="brand-logo-container p-4 bg-light">
+              <%= image_tag "agricultural-equipment/alpler-logo.png", alt: "Alpler", class: "card-img-top brand-logo", loading: "lazy" %>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h4 mb-3 text-center">Alpler Tarım Makinaları</h3>
               <p class="card-text">Profesyonel çiftçilerin tercihi, yenilikçi tarım makinaları</p>
-              <ul class="list-unstyled mb-4">
-                <li><i class="fas fa-check text-success me-2"></i>Pulluklar</li>
-                <li><i class="fas fa-check text-success me-2"></i>Toprak İşleme Ekipmanları</li>
-                <li><i class="fas fa-check text-success me-2"></i>Tesviye Makineleri</li>
-              </ul>
-              <%= link_to "Ürünleri İncele", "https://www.alpler.com.tr/", class: "btn btn-danger w-100", target: "_blank" %>
+              <div class="mt-3">
+                <h5 class="small text-uppercase text-muted fw-bold mb-2">Ürün Çeşitleri</h5>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Pulluklar</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Toprak İşleme Ekipmanları</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tesviye Makineleri</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-grid">
+                <%= link_to "Ürünleri İncele", "https://www.alpler.com.tr/", class: "btn btn-outline-danger", target: "_blank" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Montano Card -->
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-3 mb-4 brand-col animated-card" style="animation-delay: 0.3s;">
         <div class="brand-card h-100">
-          <div class="card shadow-sm h-100">
-            <%= image_tag "agricultural-equipment/montano-logo.png", alt: "Montano", class: "card-img-top brand-logo p-4" %>
-            <div class="card-body">
-              <h3 class="card-title h4 mb-3">Montano Tarım Makinaları</h3>
+          <div class="card border-0 shadow-sm h-100 position-relative overflow-hidden">
+            <span class="brand-badge">Kaliteli Ekipmanlar</span>
+            <div class="brand-logo-container p-4 bg-light">
+              <%= image_tag "agricultural-equipment/montano-logo.png", alt: "Montano", class: "card-img-top brand-logo montano-logo", loading: "lazy" %>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h4 mb-3 text-center">Montano Tarım Makinaları</h3>
               <p class="card-text">Kaliteli ve güvenilir tarım ekipmanları</p>
-              <ul class="list-unstyled mb-4">
-                <li><i class="fas fa-check text-success me-2"></i>Gübre Serpme Makinaları</li>
-                <li><i class="fas fa-check text-success me-2"></i>İlaçlama Makinaları</li>
-                <li><i class="fas fa-check text-success me-2"></i>Kaldıraç Sistemleri</li>
-              </ul>
-              <%= link_to "Ürünleri İncele", "https://montano.com.tr/", class: "btn btn-danger w-100", target: "_blank" %>
+              <div class="mt-3">
+                <h5 class="small text-uppercase text-muted fw-bold mb-2">Ürün Çeşitleri</h5>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gübre Serpme Makinaları</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>İlaçlama Makinaları</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Kaldıraç Sistemleri</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-grid">
+                <%= link_to "Ürünleri İncele", "https://montano.com.tr/", class: "btn btn-outline-danger", target: "_blank" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Parlayan Card -->
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-3 mb-4 brand-col animated-card" style="animation-delay: 0.4s;">
         <div class="brand-card h-100">
-          <div class="card shadow-sm h-100">
-            <%= image_tag "agricultural-equipment/parlayan-logo.png", alt: "Parlayan", class: "card-img-top brand-logo p-4" %>
-            <div class="card-body">
-              <h3 class="card-title h4 mb-3">Parlayan Tarım Makinaları</h3>
+          <div class="card border-0 shadow-sm h-100 position-relative overflow-hidden">
+            <span class="brand-badge">56 Yıllık Tecrübe</span>
+            <div class="brand-logo-container p-4 bg-light">
+              <%= image_tag "agricultural-equipment/parlayan-logo.png", alt: "Parlayan", class: "card-img-top brand-logo", loading: "lazy" %>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h4 mb-3 text-center">Parlayan Tarım Makinaları</h3>
               <p class="card-text">56 yıllık tecrübe ile zirai mücadele ekipmanları</p>
-              <ul class="list-unstyled mb-4">
-                <li><i class="fas fa-check text-success me-2"></i>Tarla Pulverizatörleri</li>
-                <li><i class="fas fa-check text-success me-2"></i>Atomizörler</li>
-                <li><i class="fas fa-check text-success me-2"></i>Bahçe Pulverizatörleri</li>
-              </ul>
-              <%= link_to "Ürünleri İncele", "https://www.parlayan.com.tr/", class: "btn btn-danger w-100", target: "_blank" %>
+              <div class="mt-3">
+                <h5 class="small text-uppercase text-muted fw-bold mb-2">Ürün Çeşitleri</h5>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tarla Pulverizatörleri</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Atomizörler</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Bahçe Pulverizatörleri</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-grid">
+                <%= link_to "Ürünleri İncele", "https://www.parlayan.com.tr/", class: "btn btn-outline-danger", target: "_blank" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="bg-danger text-white p-5 rounded-4 shadow position-relative overflow-hidden fade-in" style="animation-delay: 0.2s;">
+          <div class="position-absolute top-0 end-0 mt-n4 me-n4">
+            <i class="fas fa-tractor fa-5x text-white opacity-10"></i>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3 class="mb-3">Daha fazla bilgi almak ister misiniz?</h3>
+              <p class="mb-4">Satış ekibimiz size en uygun tarım ekipmanını seçmenizde yardımcı olabilir.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <%= link_to "Bize Ulaşın", contact_path, class: "btn btn-outline-light rounded-pill px-4" %>
             </div>
           </div>
         </div>
@@ -96,43 +215,227 @@
 
 <style>
 .agricultural-hero-section {
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('<%= asset_path("agricultural-equipment/banner.jpg") %>');
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= asset_path("agricultural-equipment/banner.jpg") %>');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .min-vh-50 {
-  min-height: 50vh;
+  min-height: 60vh;
+}
+
+.feature-icon-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon-container i {
+  font-size: 1.25rem;
+}
+
+.feature-item {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(5px);
+}
+
+.brand-logo-container {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .brand-logo {
-  height: 120px;
+  max-height: 80px;
+  width: auto;
   object-fit: contain;
-  padding: 1rem;
+}
+
+.matris-logo {
+  max-height: 60px;
+}
+
+.montano-logo {
+  max-height: 100px;
+}
+
+.brand-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  z-index: 1;
 }
 
 .brand-card .card {
-  transition: transform 0.3s ease;
-  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .brand-card .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-.card-body {
-  display: flex;
-  flex-direction: column;
+.product-img {
+  height: 220px;
+  object-fit: cover;
+  transition: all 0.5s ease;
 }
 
-.card-body .btn {
-  margin-top: auto;
+.product-card:hover .product-img {
+  transform: scale(1.05);
 }
 
-@media (min-width: 768px) {
+.cta-section .opacity-10 {
+  opacity: 0.1;
+}
+
+/* CSS Animasyonları */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animated-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 0.6s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.scroll-btn {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .min-vh-50 {
+    min-height: 40vh;
+  }
+  
   .brand-card {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 </style>
+
+<!-- Basitleştirilmiş JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sayfa yüklendiğinde animasyonların sorunsuz görünmesi için
+    document.body.classList.add('page-loaded');
+    
+    // Düzgün kaydırma için
+    const scrollButtons = document.querySelectorAll('.scroll-btn');
+    scrollButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Görsel yüklenmesi hatası kontrolü
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      img.addEventListener('error', function() {
+        if (this.src.indexOf('default-product.jpg') === -1) {
+          this.src = '/assets/agricultural-equipment/default-product.jpg';
+        }
+      });
+    });
+  });
+</script>

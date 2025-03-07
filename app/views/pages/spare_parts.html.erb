@@ -3,7 +3,7 @@
   <div class="hero-overlay"></div>
   <div class="container position-relative">
     <div class="row min-vh-50 align-items-center py-5">
-      <div class="col-lg-8 mx-auto text-center">
+      <div class="col-lg-8 mx-auto text-center fade-in-up" style="animation-delay: 0.2s;">
         <h1 class="display-3 fw-bold text-white mb-4">Orijinal AGCO Parçaları</h1>
         <p class="lead text-white mb-4">AGCO Parts, Massey Ferguson için tek gerçek ve orijinal yedek parçalardır.</p>
       </div>
@@ -14,7 +14,7 @@
 <!-- Orijinal Parça Açıklaması -->
 <section class="original-parts py-5">
   <div class="container">
-    <div class="section-header text-center mb-5">
+    <div class="section-header text-center mb-5 fade-in-up" style="animation-delay: 0.3s;">
       <h6 class="text-danger text-uppercase fw-bold mb-3">Kalite ve Güvenilirlik</h6>
       <h2 class="display-5 fw-bold">AGCO PARTS FARKI</h2>
       <div class="title-separator mx-auto my-4"></div>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="row g-4">
-      <div class="col-lg-12">
+      <div class="col-lg-12 fade-in" style="animation-delay: 0.4s;">
         <div class="features-card p-4 p-lg-5 bg-light rounded-3">
           <h3 class="h4 mb-4">Orijinal AGCO Parts şu özelliklere sahiptir:</h3>
           <ul class="features-list">
@@ -46,7 +46,7 @@
 <!-- Yedek Parça Kategorileri -->
 <section class="parts-categories py-5 bg-light">
   <div class="container">
-    <div class="section-header text-center mb-5">
+    <div class="section-header text-center mb-5 fade-in-up" style="animation-delay: 0.3s;">
       <h6 class="text-danger text-uppercase fw-bold mb-3">Kategoriler</h6>
       <h2 class="display-5 fw-bold">YEDEK PARÇA KATEGORİLERİ</h2>
       <div class="title-separator mx-auto my-4"></div>
@@ -54,7 +54,7 @@
 
     <div class="row g-4">
       <!-- Konfor Parçaları -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 animated-card" style="animation-delay: 0.4s;">
         <div class="category-card h-100">
           <div class="card-image">
             <img src="<%= asset_path('spare-parts-images/konfor-parcalari.png') %>" alt="Konfor Parçaları" class="img-fluid w-100">
@@ -68,7 +68,7 @@
       </div>
 
       <!-- Aşınma Parçaları -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 animated-card" style="animation-delay: 0.5s;">
         <div class="category-card h-100">
           <div class="card-image">
             <img src="<%= asset_path('spare-parts-images/asinma-parcalari.png') %>" alt="Aşınma Parçaları" class="img-fluid w-100">
@@ -82,7 +82,7 @@
       </div>
 
       <!-- Estetik Parçaları -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 animated-card" style="animation-delay: 0.6s;">
         <div class="category-card h-100">
           <div class="card-image">
             <img src="<%= asset_path('spare-parts-images/estetik-parcalari.png') %>" alt="Estetik Parçaları" class="img-fluid w-100">
@@ -96,7 +96,7 @@
       </div>
 
       <!-- Performans Parçaları -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 animated-card" style="animation-delay: 0.7s;">
         <div class="category-card h-100">
           <div class="card-image">
             <img src="<%= asset_path('spare-parts-images/performans-parcalari.png') %>" alt="Performans Parçaları" class="img-fluid w-100">
@@ -110,7 +110,7 @@
       </div>
 
       <!-- Hasat Parçaları -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 animated-card" style="animation-delay: 0.8s;">
         <div class="category-card h-100">
           <div class="card-image">
             <img src="<%= asset_path('spare-parts-images/hasat-parcalari.png') %>" alt="Hasat Parçaları" class="img-fluid w-100">
@@ -124,7 +124,7 @@
       </div>
 
       <!-- Güvenlik Parçaları -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4 animated-card" style="animation-delay: 0.9s;">
         <div class="category-card h-100">
           <div class="card-image">
             <img src="<%= asset_path('spare-parts-images/guvenlik-parcalari.png') %>" alt="Güvenlik Parçaları" class="img-fluid w-100">
@@ -144,7 +144,7 @@
 <section class="py-5">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-10">
+      <div class="col-lg-10 fade-in" style="animation-delay: 0.4s;">
         <div class="cta-card bg-danger text-white p-4 p-md-5 rounded-3 shadow">
           <div class="row align-items-center">
             <div class="col-md-8">
@@ -163,12 +163,19 @@
   </div>
 </section>
 
+<!-- Custom Styles -->
 <style>
 .spare-parts-hero-section {
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('<%= asset_path("spare-parts-images/banner.png") %>');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+:root {
+  --primary-color: #E31E24;
+  --secondary-color: #333333;
+  --light-gray: #f8f9fa;
 }
 
 .min-vh-50 {
@@ -179,6 +186,11 @@
   width: 80px;
   height: 3px;
   background-color: var(--primary-color);
+}
+
+.section-header {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .features-list {
@@ -272,4 +284,80 @@
 .cta-card:hover {
   transform: translateY(-5px);
 }
-</style> 
+
+/* CSS Animasyonları */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animated-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 0.6s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+</style>
+
+<!-- Basitleştirilmiş JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sayfa yüklendiğinde animasyonların sorunsuz görünmesi için
+    document.body.classList.add('page-loaded');
+  });
+</script> 

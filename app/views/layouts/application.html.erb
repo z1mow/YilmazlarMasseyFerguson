@@ -134,6 +134,14 @@
         width: 70%;
       }
 
+      .nav-link.active {
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link.active::after {
+        width: 70%;
+      }
+
       .nav-item {
         margin: 0 2px;
         display: flex;
@@ -410,25 +418,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <%= link_to "Ana Sayfa", root_path, class: "nav-link" %>
+              <%= link_to "Ana Sayfa", root_path, class: "nav-link #{'active' if current_page?(root_path)}" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Traktörler", products_path, class: "nav-link" %>
+              <%= link_to "Traktörler", products_path, class: "nav-link #{'active' if current_page?(products_path)}" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Tarım Makinaları", tarim_makinalari_path, class: "nav-link" %>
+              <%= link_to "Tarım Makinaları", tarim_makinalari_path, class: "nav-link #{'active' if current_page?(tarim_makinalari_path)}" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Servis", service_path, class: "nav-link" %>
+              <%= link_to "Servis", service_path, class: "nav-link #{'active' if current_page?(service_path)}" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Yedek Parça", spare_parts_path, class: "nav-link" %>
+              <%= link_to "Yedek Parça", spare_parts_path, class: "nav-link #{'active' if current_page?(spare_parts_path)}" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Hakkımızda", about_path, class: "nav-link" %>
+              <%= link_to "Hakkımızda", about_path, class: "nav-link #{'active' if current_page?(about_path)}" %>
             </li>
             <li class="nav-item">
-              <%= link_to "İletişim", contact_path, class: "nav-link" %>
+              <%= link_to "İletişim", contact_path, class: "nav-link #{'active' if current_page?(contact_path)}" %>
             </li>
           </ul>
         </div>
