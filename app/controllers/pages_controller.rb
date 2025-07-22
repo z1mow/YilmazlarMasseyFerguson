@@ -16,4 +16,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def musteri_aydinlatma
+  end
+
+  def tedarikci_aydinlatma
+  end
 end 

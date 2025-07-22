@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'servis', to: 'pages#service', as: :service
   get 'yedek-parca', to: 'pages#spare_parts', as: :spare_parts
   get 'iletisim', to: 'pages#contact', as: :contact
+  get 'musteri_aydinlatma', to: 'pages#musteri_aydinlatma'
+  get 'tedarikci_aydinlatma', to: 'pages#tedarikci_aydinlatma'
   
   # KVKK Sayfaları
   get 'kvkk-politikasi', to: 'pages#kvkk_policy', as: :kvkk_policy

@@ -519,6 +519,8 @@
                   <li><%= link_to "Yedek Parça", spare_parts_path, class: "text-light text-decoration-none opacity-75" %></li>
                   <li><%= link_to "İletişim", contact_path, class: "text-light text-decoration-none opacity-75" %></li>
                   <li><%= link_to "KVKK Politikası", kvkk_policy_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "Müşteri Aydınlatma Metni", musteri_aydinlatma_path, class: "text-light text-decoration-none opacity-75" %></li>
+                  <li><%= link_to "Tedarikçi Aydınlatma Metni", tedarikci_aydinlatma_path, class: "text-light text-decoration-none opacity-75" %></li>
                 </ul>
               </div>
             </div>
@@ -539,8 +541,10 @@
         <div class="cookie-content p-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between">
           <div class="cookie-text mb-3 mb-md-0">
             <p class="mb-0">Bu web sitesi, size en iyi deneyimi sunmak için çerezleri kullanmaktadır. Sitemizi kullanmaya devam ederek, 
-            <a href="<%= kvkk_policy_path %>" class="text-primary">KVKK Politikamızı</a> ve 
-            <a href="<%= kvkk_disclosure_path %>" class="text-primary">Aydınlatma Metnimizi</a> kabul etmiş olursunuz.</p>
+            <a href="<%= kvkk_policy_path %>" class="text-primary">KVKK Politikamızı</a>, 
+            <a href="<%= kvkk_disclosure_path %>" class="text-primary">Aydınlatma Metnimizi</a>, 
+            <a href="<%= musteri_aydinlatma_path %>" class="text-primary">Müşteri Aydınlatma Metni</a> ve 
+            <a href="<%= tedarikci_aydinlatma_path %>" class="text-primary">Tedarikçi Aydınlatma Metni</a> kabul etmiş olursunuz.</p>
           </div>
           <div class="cookie-buttons">
             <button class="btn btn-primary w-100" id="cookieAccept">Kabul Ediyorum</button>
