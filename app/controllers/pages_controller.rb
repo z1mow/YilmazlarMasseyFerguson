@@ -22,4 +22,7 @@ class PagesController < ApplicationController
 
   def tedarikci_aydinlatma
   end
+
+  def kvkk
+  end
 end 

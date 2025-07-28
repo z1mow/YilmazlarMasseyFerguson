@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'iletisim', to: 'pages#contact', as: :contact
   get 'musteri_aydinlatma', to: 'pages#musteri_aydinlatma'
   get 'tedarikci_aydinlatma', to: 'pages#tedarikci_aydinlatma'
+  get 'kvkk', to: 'pages#kvkk', as: 'kvkk'
   
   # KVKK Sayfaları
   get 'kvkk-politikasi', to: 'pages#kvkk_policy', as: :kvkk_policy
